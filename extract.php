@@ -1,7 +1,7 @@
 <?php
 
 /* Einbettung API Link */
-$url = "https://api.sharedmobility.ch/v1/sharedmobility/identify?Geometry=8.72296,47.49883&Tolerance=200&offset=0&geometryFormat=esrijson&filters=ch.bfe.sharedmobility.vehicle_type=E-Scooter&filters=ch.bfe.sharedmobility.provider.id=tier_winterthur";
+$url = "https://api.sharedmobility.ch/v1/sharedmobility/identify?Geometry=8.72296,47.49883&Tolerance=2000&offset=0&geometryFormat=esrijson&filters=ch.bfe.sharedmobility.vehicle_type=E-Scooter&filters=ch.bfe.sharedmobility.provider.id=tier_winterthur";
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
