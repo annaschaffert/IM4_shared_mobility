@@ -24,10 +24,9 @@ foreach ($result as $item) {
    $shared_mobility_data[] = [
         "id_vehicle" => $id,
         "available" => $available,
-        "station_name" => $station_name
+       "station_name" => $station_name
     ];
 }
-
 
 
 
