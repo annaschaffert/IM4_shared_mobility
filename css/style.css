@@ -6,7 +6,7 @@
 
 .abgerundetes-rechteck {
     position: absolute;
-    width: 950px;
+    width: 940px;
     height: 600px;
     background-color: #A9D9D0;
     border-radius: 210px 0 0 210px;
@@ -14,7 +14,7 @@
     top: 0;
     z-index: -1;
     overflow: hidden; /* Stelle sicher, dass das Bild innerhalb des Rechtecks bleibt */
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 .startseite-text::before {
@@ -30,9 +30,9 @@
 
 .blaue_fleache img {
     position: relative; /* Positioniere das Bild relativ zum Seitencontainer */
-    margin-top: -600px;
     margin-left: 500px;
-    height: 900px;
+    height: 800px;
+    margin-top: -540px;
 }
 
 .startseite-text {
@@ -63,23 +63,74 @@ h2 {
 h3 {
     color: #0D0D0D;
     font-family: "Archivo", sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 300;
     line-height: 1.3;
     margin-top: -10px;
 }
 
 /*Übersichtsseite*/
+
+#uebersichtsseite{
+    padding-top: 120px;
+    margin: 0 auto;
+    padding-bottom: 170px;
+  
+
+}
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 200px 1fr; /* Zwei Spalten, das Bild hat eine feste Breite von 200px */
+    grid-template-columns: 1fr 550px 1fr; /* Zwei Spalten, das Bild hat eine feste Breite von 200px */
     grid-template-rows: auto; /* Automatische Höhe für die beiden Reihen */
-    gap: 20px; /* Abstand zwischen den Grid-Elementen */
+    gap: 5px; /* Abstand zwischen den Grid-Elementen */
 }
 
-.box {
-    background-color: lightgray;
-    padding: 20px;
+
+.box1{
+    color: #0D0D0D;
+    font-family: "Archivo", sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.3;
+    text-align: right;
+    max-width: 300px; /* Maximalbreite des Textcontainers */
+    margin: 0 auto; /* Zentrieren des Textcontainers */
+    margin-right: 40px;
+}
+
+.box2{
+    color: #F37349;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 190px;
+    line-height: 1.3;
+    text-align: center;
+    margin-right: 200px;
+}
+
+.box4{
+    color: #0D0D0D;
+    font-family: "Archivo", sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.3;
+    text-align: left;
+    max-width: 300px; /* Maximalbreite des Textcontainers */
+    margin: 0 auto; /* Zentrieren des Textcontainers */
+    margin-left: 55px;
+}
+
+.box3{
+    color: #F37349;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 190px;
+    line-height: 1.3;
+    text-align: center;
+    margin-left: 200px;
+    
 }
 
 .center-box {
@@ -87,9 +138,21 @@ h3 {
     grid-row: 1 / span 2; /* Das Bild soll über beide Reihen reichen */
 }
 
-img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    margin: auto;
+.center-box img {
+    height: 650px;
+    position: center;
+}
+
+
+.overlay-text {
+    position: absolute;
+    top: 50%; /* Zentrieren vertikal */
+    left: 50%; /* Zentrieren horizontal */
+    transform: translate(-50%, -50%);
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5); /* Farbe mit weniger Deckkraft */
+    font-size: 30px; /* Anpassen der Schriftgröße */
+    text-align: center; /* Zentrieren des Textes */
+    z-index: 2; /* Stellen Sie sicher, dass der Overlay-Text über dem anderen Text liegt */
 }
