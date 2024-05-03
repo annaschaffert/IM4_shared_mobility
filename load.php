@@ -9,7 +9,7 @@ require_once 'config.php';
 // Versuche eine Verbindung zur Datenbank herzustellen
 try {
     // Erstellt eine neue PDO-Instanz mit der Konfiguration aus config.php
-    $pdo = new PDO($dsn, $user, $pass, $options);
+    $pdo = new PDO($dsn, $username, $password, $options);
 
     // SQL-Query mit Platzhaltern für das Einfügen von Daten
     $sql = "INSERT INTO Shared_Mobility (id_vehicle, station_status_num_vehicle_available, station_name) VALUES (?, ?, ?)";
