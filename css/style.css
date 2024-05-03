@@ -77,7 +77,7 @@ h3 {
     padding-bottom: 170px;
   
 
-}
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 550px 1fr; /* Zwei Spalten, das Bild hat eine feste Breite von 200px */
