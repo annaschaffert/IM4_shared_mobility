@@ -25,3 +25,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
   });
+
+async function fetchData() {
+    try {
+        const response = await fetch("https://423521-10.web.fhgr.ch/mobility.php");
+        const data = await response.json();
+        // Process the fetched data here
+        console.log(data);
+    } catch (error) {
+        // Handle any errors that occur during the fetch
+        console.error(error);
+    }
+}
+async function main() {
+    let data = await fetchData();  
+    console.log(data);
+}
+
+main();
