@@ -12,7 +12,7 @@ try {
     $pdo = new PDO($dsn, $user, $pass, $options);
 
     // SQL-Query mit Platzhaltern für das Einfügen von Daten
-    $sql = "INSERT INTO Shared_Mobility (id_vehicle, available, station_name) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO Shared_Mobility (id_vehicle, station_status_num_vehicle_available, station_name) VALUES (?, ?, ?)";
 
     // Bereitet die SQL-Anweisung vor
     $stmt = $pdo->prepare($sql);
@@ -21,7 +21,7 @@ try {
     foreach ($shared_mobility_data as $item) {
         $stmt->execute([
             $item['id_vehicle'],
-            $item['available'],
+            $item['station_status_num_vehicle_available'],
             $item['station_name']
         ]);
     }
