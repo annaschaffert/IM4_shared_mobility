@@ -1,4 +1,112 @@
 /*----------------------------------------------Titelseite--------------------------------------*/
+/*----------------------------------------------Navigation--------------------------------------*/
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    cursor: pointer;
+}
+  
+.hamburger{
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 20px;
+    padding: 40px;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 9999;
+    position: relative;
+}
+
+.hamburger:not(.inactive) .line {
+    background-color: #A9D9D0; 
+    cursor: pointer;
+}
+
+.line{
+    background-color: #A9D9D0; 
+    width: 95%;
+    height: 3px;
+   
+    cursor: pointer;
+}
+
+.dropdown{
+    display: none!important;
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width:100%;
+    padding: 90px 0 0 20px;
+    background-color: #F37349;
+    height: 100vh;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    border-radius: 4px; 
+    cursor: pointer;   
+}
+
+.dropdown.open {
+    display: block !important;
+    cursor: pointer;
+    width: 100%;
+    
+}
+
+.dropdown li{
+    padding: 10px;
+    text-transform: uppercase;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    transition: all 0.2s; /* Änderung hier */
+    text-decoration: none;
+    list-style-type: none;
+
+      
+
+}
+
+.dropdown li:hover{
+    background-color: #F37349;;
+    width: 95%;
+    text-decoration: none;
+}
+
+.dropdown a{
+    color: white;
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    font-size: 100px;
+    text-decoration: none;
+}
+
+.dropdown a:hover{
+    color: #A9D9D0;
+}
+
+.dropdown li:nth-child(1){
+    animation-delay: 0.1s;
+}
+
+.dropdown li:nth-child(2){
+    animation-delay: 0.15s;
+}
+
+.dropdown li:nth-child(3){
+    animation-delay: 0.3s;
+}
+
+.dropdown li:nth-child(4){
+    animation-delay: 0.45s;
+}
+
+
+
+
+
+
 .startseite {
     position: relative;
     margin-top: 40px; /* Füge einen oberen Abstand hinzu, um Platz für das Rechteck zu schaffen */
