@@ -349,3 +349,15 @@ h4 {
     position: relative; /* Add position relative to h1 */
 }
 
+/*----------------------------------------Footer------------------------------------------*/
+
+footer {
+    background-color: #84D7C7;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-top: 50px;
+}
