@@ -80,59 +80,115 @@ async function main() {
         options: options,
     });
 
-    // Create a line chart
-    const lineCtx = document.getElementById("lineChart").getContext("2d");
-    const lineData = {
-        labels: [], // Labels will be updated based on selected time period
-        datasets: [{
-            label: 'Total Number of Vehicles',
-            data: [], // Data will be updated based on selected time period
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132, 1)',
-            borderWidth: 1
-        }]
-    };
-    const lineOptions = {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    };
 
-    const lineChart = new Chart(lineCtx, {
-        type: 'line',
-        data: lineData,
-        options: lineOptions
-    });
+    // add a line chart
 
-    // Function to update line chart data based on selected time period
-    function updateLineChart(startDate, endDate) {
-        const selectedData = total_num_vehicles.filter(item => {
-            const date = new Date(item.date);
-            return date >= startDate && date <= endDate;
+    const lineChartCtx = document.getElementById("lineChart").getContext("2d");
+    const startDateInput = document.getElementById("start_date");
+    const endDateInput = document.getElementById("end_date");
+
+    function createLineChart(data) {
+        const lineData = {
+            labels: data.map(item => item.date),
+            datasets: [
+                {
+                    label: "Total Number of Vehicles",
+                    data: data.map(item => item.total_num_vehicles),
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    borderColor: "rgba(75, 192, 192, 1)",
+                    borderWidth: 1,
+                },
+            ],
+        };
+
+        const lineOptions = {
+            scales: {
+                x: {
+                    type: "time",
+                    time: {
+                        unit: "day",
+                        displayFormats: {
+                            day: "MMM D",
+                        },
+                    },
+                    ticks: {
+                        source: "auto",
+                    },
+                },
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        };
+
+        const lineChart = new Chart(lineChartCtx, {
+            type: "line",
+            data: lineData,
+            options: lineOptions,
         });
-
-        lineData.labels = selectedData.map(item => item.date);
-        lineData.datasets[0].data = selectedData.map(item => item.total_num_vehicles);
-        lineChart.update();
     }
 
-    // Add event listener to datepicker to update line chart data
-    const startDatePicker = document.getElementById('start_date');
-    const endDatePicker = document.getElementById('end_date');
+    async function fetchLineChartData(startDate, endDate) {
+        try {
+            const response = await fetch("https://423521-10.web.fhgr.ch/mobility.php");
+            const data = await response.json();
+            const filteredData = data.filter(item => {
+                const itemDate = new Date(item.date);
+                return itemDate >= startDate && itemDate <= endDate;
+            });
+            return filteredData;
+        } catch (error) {
+            console.error(error);
+            return [];
+        }
+    }
 
-    startDatePicker.addEventListener('change', function () {
-        const startDate = new Date(this.value);
-        const endDate = new Date(endDatePicker.value);
-        updateLineChart(startDate, endDate);
-    });
+    function handleDateChange() {
+        const startDate = new Date(startDateInput.value);
+        const endDate = new Date(endDateInput.value);
+        if (startDate && endDate) {
+            fetchLineChartData(startDate, endDate)
+                .then(data => {
+                    createLineChart(data);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+    }
 
-    endDatePicker.addEventListener('change', function () {
-        const startDate = new Date(startDatePicker.value);
-        const endDate = new Date(this.value);
-        updateLineChart(startDate, endDate);
-    });
+    startDateInput.addEventListener("change", handleDateChange);
+    endDateInput.addEventListener("change", handleDateChange);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".hamburger");
+    const menu = document.querySelector(".dropdown");
+  
+    menuToggle.addEventListener("click", function (event) {
+        menu.classList.toggle("open");
+    });
+  
+    const menuItems = document.querySelectorAll(".dropdown a");
+    menuItems.forEach(function (item) {
+        item.addEventListener("click", function (event) {
+            event.preventDefault();
+  
+            const targetSectionId = item.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetSectionId);
+  
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: "smooth",
+                });
+            }
+  
+            menu.classList.remove("open");
+        });
+    });
+
+    main();
+});
 
 main();
