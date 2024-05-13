@@ -24,14 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
             menu.classList.remove("open");
         });
     });
-<<<<<<< HEAD
 
     main(); // Hier einmal main() aufrufen, um sicherzustellen, dass es nur einmal ausgeführt wird
 });
-=======
-  });
 
->>>>>>> 7c19637ba263d16d7dcb0adf7782c24e1731f75b
 
 async function fetchData() {
     try {
