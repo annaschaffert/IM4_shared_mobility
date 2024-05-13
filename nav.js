@@ -24,58 +24,115 @@ document.addEventListener("DOMContentLoaded", function () {
             menu.classList.remove("open");
         });
     });
-  });
+});
 
 async function fetchData() {
     try {
         const response = await fetch("https://423521-10.web.fhgr.ch/mobility.php");
         const data = await response.json();
-        // Process the fetched data here
-        console.log(data);
+        return data;
     } catch (error) {
         // Handle any errors that occur during the fetch
         console.error(error);
     }
 }
+
 async function main() {
-    let data = await fetchData(); 
-    let time = data.time;
-    let weekday = data.weekday;
-    let total_num_vehicles = data.total_num_vehicles; 
+    const total_num_vehicles = await fetchData();
+    console.log(total_num_vehicles);
 
-const ctx = document.getElementById("myChart").getContext("2d");
+    const ctx = document.getElementById("myChart").getContext("2d");
 
-const myChart = {
-    labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    datasets: [
-        {
-            label: "Total Number of Vehicles",
-            data: total_num_vehicles,
-            backgroundColor: "rgba(54, 162, 235, 0.2)",
-            borderColor: "rgba(54, 162, 235, 1)",
+    const formattedData = total_num_vehicles.map(item => item.total_num_vehicles);
+
+    console.log(formattedData);
+
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    const hoursOfDay = [0, 3, 6, 9, 12, 15, 18, 21];
+    const data = {
+        labels: hoursOfDay,
+        datasets: [],
+    };
+
+    weekdays.forEach((weekday, index) => {
+        const dataset = {
+            label: weekday,
+            data: formattedData.slice(index * hoursOfDay.length, (index + 1) * hoursOfDay.length),
+            backgroundColor: `rgba(75, 192, 192, ${index / weekdays.length})`,
+            borderColor: "rgba(75, 192, 192, 1)",
             borderWidth: 1,
+        };
+        data.datasets.push(dataset);
+    });
+
+    const options = {
+        scale: {
+            ticks: {
+                beginAtZero: true
+            },
         },
-    ],
-};
+    };
 
-const options = {
-    scale: {
-        ticks: {
-            beginAtZero: true,
-            max: Math.max(...total_num_vehicles) + 10,
-        },
-    },
-};
+    const radarChart = new Chart(ctx, {
+        type: "radar",
+        data: data,
+        options: options,
+    });
 
-const radarChart = new Chart(ctx, {
-    type: "radar",
-    data: data,
-    options: options,
-});
+    // Create a line chart
+    const lineCtx = document.getElementById("lineChart").getContext("2d");
+    const lineData = {
+        labels: [], // Labels will be updated based on selected time period
+        datasets: [{
+            label: 'Total Number of Vehicles',
+            data: [], // Data will be updated based on selected time period
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        }]
+    };
+    const lineOptions = {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    };
 
+    const lineChart = new Chart(lineCtx, {
+        type: 'line',
+        data: lineData,
+        options: lineOptions
+    });
+
+    // Function to update line chart data based on selected time period
+    function updateLineChart(startDate, endDate) {
+        const selectedData = total_num_vehicles.filter(item => {
+            const date = new Date(item.date);
+            return date >= startDate && date <= endDate;
+        });
+
+        lineData.labels = selectedData.map(item => item.date);
+        lineData.datasets[0].data = selectedData.map(item => item.total_num_vehicles);
+        lineChart.update();
+    }
+
+    // Add event listener to datepicker to update line chart data
+    const startDatePicker = document.getElementById('start_date');
+    const endDatePicker = document.getElementById('end_date');
+
+    startDatePicker.addEventListener('change', function () {
+        const startDate = new Date(this.value);
+        const endDate = new Date(endDatePicker.value);
+        updateLineChart(startDate, endDate);
+    });
+
+    endDatePicker.addEventListener('change', function () {
+        const startDate = new Date(startDatePicker.value);
+        const endDate = new Date(this.value);
+        updateLineChart(startDate, endDate);
+    });
 }
-
-
-console.log(data);
 
 main();
