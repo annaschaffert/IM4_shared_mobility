@@ -31,7 +31,6 @@
     background-color: #A9D9D0; 
     width: 95%;
     height: 3px;
-   
     cursor: pointer;
 }
 
@@ -64,8 +63,6 @@
     text-decoration: none;
     list-style-type: none;  
 }
-
-
 
 .dropdown a{
     color: white;
@@ -124,9 +121,8 @@
     margin-top: 55px;
     left: 220px; /* Anpassen der Position des Strichs zur Seite */
     width: 6px; /* Breite des Strichs */
-    background-color: #F2E7DC; /* Farbe des Strichs */
+    background-color: #A9D9D0; /* Farbe des Strichs */
 }
-
 
 .blaue_fleache img {
     position: relative; /* Positioniere das Bild relativ zum Seitencontainer */
@@ -195,11 +191,12 @@ h4 {
     max-width: 300px; /* Maximalbreite des Textcontainers */
     margin: 0 auto; /* Zentrieren des Textcontainers */
     margin-right: 40px;
+    word-spacing: -1px; /* Beispielwert, anpassen nach Bedarf */
+    letter-spacing: -0.5px; /* Beispielwert, anpassen nach Bedarf */
 }
 
 .box2{
     color: #F2E7DC;
-    opacity: 0.8;
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -215,17 +212,17 @@ h4 {
     font-size: 17px;
     font-weight: 300;
     line-height: 1.3;
-    text-align: justify;
+    text-align: left;
     max-width: 300px; /* Maximalbreite des Textcontainers */
     margin: 0 auto; /* Zentrieren des Textcontainers */
     margin-left: 55px;
     margin-top: 20px;
-
+    word-spacing: -1px; /* Beispielwert, anpassen nach Bedarf */
+    letter-spacing: -0.5px; /* Beispielwert, anpassen nach Bedarf */
 }
 
 .box3{
     color: #F2E7DC;
-    opacity: 0.8;
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -284,7 +281,7 @@ h4 {
 
 /*----------------------------------------Fakten------------------------------------------*/
 #fakten{
-    padding-top: 120px;
+    padding-top: 50px;
     margin: 0 auto;
     padding-bottom: 120px;
 }
@@ -298,28 +295,45 @@ h4 {
 }
 
 .fakten-text h1{
-    color: #84D7C7;
-    font-family: "Archivo", sans-serif;
-    font-weight: 600;
+    color: #F2E7DC;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
     font-style: normal;
-    font-size: 250px;
+    font-size: 280px;
     margin: 0 auto;
     text-align: center;
     position: relative; /* Add position relative to h1 */
+    opacity: 0.7;
 }
 
 .fakten-text .overlay-text-fakten{
     color: #0D0D0D;
-    font-family: "Archivo Black", sans-serif;
-    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
     font-style: normal;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 1.3;
     text-align: center;
     margin: 0 auto;
-    margin-top: -40px;
-    margin-right: 150px;
-    max-width: 700px;
+    margin-top: -45px;
+    margin-right: 50px;
+    max-width: 800px;
+    transform: translate(-50%, -50%);
+    position: relative; /* Add position relative to h1 */
+}
+
+.fakten-text .overlay-text-klein-fakten{
+    color: #858585;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 auto;
+    margin-top:-10px;
+    margin-right: -40px;
+    max-width: 900px;
     transform: translate(-50%, -50%);
     position: relative; /* Add position relative to h1 */
 }
