@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
             menu.classList.remove("open");
         });
     });
-});
+  });
+
 
 async function fetchData() {
     try {
