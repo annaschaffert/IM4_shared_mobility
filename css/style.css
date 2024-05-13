@@ -93,9 +93,6 @@
 }
 
 /*----------------------------------------------Startseite--------------------------------------*/
-
-/*----------------------------------------------E-Scooter--------------------------------------*/
-
 .startseite {
     position: relative;
     margin-top: 40px; /* Füge einen oberen Abstand hinzu, um Platz für das Rechteck zu schaffen */
@@ -347,3 +344,17 @@ footer {
     font-size: 17px;
     margin-top: 50px;
 }
+
+
+/*----------------------------------------RESPONSIVE------------------------------------------*/
+
+@media screen and (max-width: 1750px) {
+    .abgerundetes-rechteck {
+        display: none; /* Das abgerundete Rechteck ausblenden */
+    }
+
+}
+
+
+
+
