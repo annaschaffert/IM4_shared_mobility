@@ -174,7 +174,6 @@ h4 {
 #uebersichtsseite{
     padding-top: 120px;
     margin: 0 auto;
-    padding-bottom: 190px;
 }
 
 
@@ -216,11 +215,12 @@ h4 {
     font-size: 17px;
     font-weight: 300;
     line-height: 1.3;
-    text-align: left;
+    text-align: justify;
     max-width: 300px; /* Maximalbreite des Textcontainers */
     margin: 0 auto; /* Zentrieren des Textcontainers */
     margin-left: 55px;
     margin-top: 20px;
+
 }
 
 .box3{
@@ -286,68 +286,44 @@ h4 {
 #fakten{
     padding-top: 120px;
     margin: 0 auto;
-    padding-bottom: 130px;
+    padding-bottom: 120px;
 }
 
-.second-grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Zwei Spalten mit gleicher Breite */
-    grid-gap: 10px; /* Abstand zwischen den Grid-Elementen */
-    padding: 20px;
-}
-
-.second-box {
-    padding: 10px; /* Innenabstand */
-}
-
-.second-box img {
-    max-width: 100%; /* Maximale Bildbreite */
-    margin-right: 400px;
+.map-svg img {
+    max-width: 50%; /* Maximale Bildbreite */
     display: block; /* Blockelement */
     margin: 0 auto;
-    margin-top: -140px;
-    padding-right: 80px;
+    margin-top: -120px;
     position: relative;
 }
 
-.second-box .fakten-text h1{
+.fakten-text h1{
     color: #84D7C7;
     font-family: "Archivo", sans-serif;
     font-weight: 600;
     font-style: normal;
     font-size: 250px;
     margin: 0 auto;
-    margin-top: -45px;
     text-align: center;
     position: relative; /* Add position relative to h1 */
 }
-.second-box .fakten-text .overlay-text-fakten{
+
+.fakten-text .overlay-text-fakten{
     color: #0D0D0D;
     font-family: "Archivo Black", sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 25px;
+    font-size: 30px;
     line-height: 1.3;
     text-align: center;
     margin: 0 auto;
-    margin-right: -65px;
-    margin-top:-40px;
-    max-width: 500px;
+    margin-top: -40px;
+    margin-right: 150px;
+    max-width: 700px;
     transform: translate(-50%, -50%);
     position: relative; /* Add position relative to h1 */
 }
 
-.second-box .map-text h1{
-    color: #84D7C7;
-    font-family: "Archivo", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 250px;
-    margin: 0 auto;
-    margin-top: -45px;
-    text-align: center;
-    position: relative; /* Add position relative to h1 */
-}
 
 /*----------------------------------------Footer------------------------------------------*/
 
