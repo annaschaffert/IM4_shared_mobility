@@ -350,7 +350,22 @@ footer {
 /*----------------------------------------RESPONSIVE-------------------------------------*/
 
 @media screen and (max-width: 1500px) {
-   
+
+  /*----------------------------------------------Header--------------------------------------*/  
+    .dropdown a{
+        font-size: 90px;
+    }
+
+    .line{
+        background-color: #ffffff; 
+    }
+
+    .hamburger:not(.inactive) .line {
+        background-color:#ffffff;
+    }
+    
+  /*----------------------------------------------Übersichtsseite--------------------------------------*/  
+
     .abgerundetes-rechteck {
        border-radius: 0%;
        width: 1500px;
@@ -363,7 +378,7 @@ footer {
         content: '';
         height: 70%;
         position: absolute;
-        margin-top: 100px;
+        margin-top: 90px;
         left: 310px; /* Anpassen der Position des Strichs zur Seite */
         width: 6px; /* Breite des Strichs */
         background-color: #F2E7DC; /* Farbe des Strichs */
@@ -514,30 +529,39 @@ footer {
 
 
 @media screen and (max-width: 1300px) {
+
+/*----------------------------------------------Header--------------------------------------*/  
+.dropdown a{
+    font-size: 60px;
+}
 /*----------------------------------------------Startseite--------------------------------------*/ 
      .startseite-text::before {
-         height: 70%;
-         margin-top: 100px;
-         left: 310px; /* Anpassen der Position des Strichs zur Seite */
-         width: 6px; /* Breite des Strichs */
+         height: 65%;
+         margin-top: 110px;
+         left: 340px; /* Anpassen der Position des Strichs zur Seite */
+         width: 5px; /* Breite des Strichs */
      }
  
      .blaue_fleache img {
-         margin-left:750px;
+         margin-left:720px;
          height: 400px;
-         padding-top: 220px;
+         padding-top: 240px;
      }
+     .startseite-text {
+        position: relative;
+        padding-left: 380px;
+        padding-top: 30px;
+    }
 
-     
      h2 {
          font-size: 70px;
-         margin-right: 300px;
+         margin-right: 360px;
          margin-top: 110px;
      }
      
      h3 {
          font-size: 30px;
-         margin-top: -70px;
+         margin-top: -60px;
      }
      
      h4 {
@@ -560,35 +584,34 @@ footer {
     margin-top:-10px;
     margin-right: -260px;
 }
- 
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1140px) {
 /*----------------------------------------------Startseite--------------------------------------*/
 
     .startseite-text::before {
-        height: 70%;
-        margin-top: 100px;
-        left: 200px; /* Anpassen der Position des Strichs zur Seite */
-        width: 6px; /* Breite des Strichs */
+        height: 85%;
+        margin-top: -8px;
+        left: 335px; /* Anpassen der Position des Strichs zur Seite */
+        width: 5px; /* Breite des Strichs */
     }
     .startseite-text {
         position: relative;
-        padding-left: 250px;
-        padding-top: 30px;
+        padding-left: 370px;
+        position: absolute;
     }
 
     .blaue_fleache img {
-        margin-left:600px;
+        margin-left: 400px;
         height: 400px;
-        padding-top: 220px;
+        padding-top: 780px;
+        position: relative;
     }
 
-    
     h2 {
         font-size: 60px;
         margin-right: 300px;
-        margin-top: 110px;
+        margin-top:-15px;
     }
     
     h3 {
