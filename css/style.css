@@ -123,7 +123,7 @@
 
 .blaue_fleache img {
     position: relative; /* Positioniere das Bild relativ zum Seitencontainer */
-    margin-left: 500px;
+    margin-left:950px;
     height: 800px;
     margin-top: -540px;
 }
@@ -346,15 +346,27 @@ footer {
 }
 
 
-/*----------------------------------------RESPONSIVE------------------------------------------*/
+/*----------------------------------------RESPONSIVE-------------------------------------
 
 @media screen and (max-width: 1750px) {
     .abgerundetes-rechteck {
-        display: none; /* Das abgerundete Rechteck ausblenden */
+       border-radius: 0%;
+       width: 100%;
+       height: 100%;
+       margin-top: -40px;
+    }
+
+}
+
+@media screen and (max-width: 1500px) {
+    .abgerundetes-rechteck {
+
+       width: 150%;
+       
     }
 
 }
 
 
-
+-----*/
 
