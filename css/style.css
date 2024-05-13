@@ -66,7 +66,7 @@
 
 .dropdown a{
     color: white;
-    font-family: "Archivo", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 800;
     font-size: 100px;
     text-decoration: none;
@@ -118,7 +118,7 @@
     content: '';
     height: 70%;
     position: absolute;
-    margin-top: 55px;
+    margin-top: 70px;
     left: 220px; /* Anpassen der Position des Strichs zur Seite */
     width: 6px; /* Breite des Strichs */
     background-color: #A9D9D0; /* Farbe des Strichs */
@@ -139,20 +139,20 @@
 
 h2 {
     color: #F2E7DC;
-    font-family: "Archivo Black", sans-serif;
-    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
     font-style: normal;
-    font-size: 110px;
+    font-size: 114px;
     margin-right: 300px;
 }
 
 h3 {
     color: #0D0D0D;
-    font-family: "Archivo Black", sans-serif;
-    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
     font-style: normal;
-    font-size: 40px;
-    margin-top: -60px;
+    font-size: 45px;
+    margin-top: -100px;
     
 }
 
@@ -162,7 +162,7 @@ h4 {
     font-size: 17px;
     font-weight: 300;
     line-height: 1.3;
-    margin-top: -10px;
+    margin-top: -30px;
 }
 
 /*----------------------------------------Übersichtsseite------------------------------------------*/
@@ -230,7 +230,6 @@ h4 {
     line-height: 1.3;
     text-align: center;
     margin-left: 200px;
-    
 }
 
 .center-box {
@@ -252,13 +251,11 @@ h4 {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "Archivo Black", sans-serif;
-    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
     color: #A9D9D0;
     font-size: 50px; /* Adjust the font size */
     text-align: center; /* Center the text */
-    z-index: 2; /* Make sure the overlay text is above the other text */
- 
 }
 
 .box3 {
@@ -270,12 +267,11 @@ h4 {
     top: 40%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%);
-    font-family: "Archivo Black", sans-serif;
-    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
     color: #A9D9D0;
     font-size: 50px; /* Adjust the font size */
     text-align: center; /* Center the text */
-    z-index: 2; /* Make sure the overlay text is above the other text */
 }
 
 
