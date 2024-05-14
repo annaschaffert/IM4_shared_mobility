@@ -31,21 +31,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function fetchData() {
     try {
-        // Anstatt Daten von der API abzurufen, generiere randomisierte Daten
         const randomData = [];
-        for (let i = 0; i < 24; i++) { // 24 Stunden im Tag
-            let randomNumber;
-            if (i >= 0 && i < 9) {
-                // Zufallszahlen zwischen 30 und 40 für die Stunden von 0 bis 9 Uhr
-                randomNumber = Math.floor(Math.random() * (40 - 30 + 1)) + 30;
-            } else if (i >= 9 && i < 17) {
-                // Zufallszahlen zwischen 10 und 30 für die Stunden von 10 bis 16 Uhr
-                randomNumber = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
-            } else {
-                // Zufallszahlen zwischen 2 und 40 für die Stunden von 17 bis 23 Uhr
-                randomNumber = Math.floor(Math.random() * (40 - 2 + 1)) + 2;
+        for (let day = 0; day < 7; day++) { // Für jeden Wochentag
+            for (let i = 0; i < 24; i++) { // 24 Stunden im Tag
+                let randomNumber;
+                if (i >= 0 && i < 9) {
+                    randomNumber = Math.floor(Math.random() * (40 - 30 + 1)) + 30;
+                } else if (i >= 9 && i < 17) {
+                    randomNumber = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
+                } else {
+                    randomNumber = Math.floor(Math.random() * (40 - 2 + 1)) + 2;
+                }
+                randomData.push(randomNumber);
             }
-            randomData.push(randomNumber);
         }
         return randomData;
     } catch (error) {
@@ -53,6 +51,7 @@ async function fetchData() {
         return [];
     }
 }
+
 
 async function main() {
     const total_num_vehicles = await fetchData();
@@ -71,16 +70,29 @@ async function main() {
         datasets: [],
     };
 
+    const colors = [
+        "rgba(4, 104, 139, 0.2)",    // Dunkelblau
+        "rgba(30, 144, 255, 0.2)", // Blau
+        "rgba(0, 191, 255, 0.2)",  // Mittelblau
+        "rgba(135, 206, 235, 0.2)",// Hellblau
+        "rgba(173, 216, 230, 0.2)",// Hellblau
+        "rgba(176, 224, 230, 0.2)",// Hellblau
+        "rgba(240, 248, 255, 0.2)" // Azurblau
+    ];    
+    
+    
     weekdays.forEach((weekday, index) => {
         const dataset = {
             label: weekday,
             data: formattedData.slice(index * hoursOfDay.length, (index + 1) * hoursOfDay.length),
-            backgroundColor: `rgba(75, 192, 192, ${index / weekdays.length})`,
-            borderColor: "rgba(75, 192, 192, 1)",
+            backgroundColor: colors[index % colors.length], // Use a different color from the array for each dataset
+            borderColor: colors[index % colors.length],
             borderWidth: 1,
+            hidden: !["Montag", "Dienstag", "Mittwoch"].includes(weekday), // Verstecke Datasets außer Montag, Dienstag und Mittwoch
         };
         data.datasets.push(dataset);
     });
+    
 
     const options = {
         scales: {
@@ -100,84 +112,47 @@ async function main() {
         data: data,
         options: options,
     });
+
+    // Eventlistener zum Ein- und Ausblenden von Datasets hinzufügen
+    const legend = radarChart.legend;
+    legend.legendItems.forEach(item => {
+        item.textEl.addEventListener("click", function () {
+            const datasetIndex = item.datasetIndex;
+            const dataset = radarChart.data.datasets[datasetIndex];
+            dataset.hidden = !dataset.hidden; // Umkehren Sie den aktuellen Status
+            radarChart.update(); // Aktualisiere die Chartansicht
+        });
+    });
 }
 
-    // add a line chart
+    // co2 barometer _________________________________________________________
 
-    const lineChartCtx = document.getElementById("lineChart").getContext("2d");
-    const startDateInput = document.getElementById("start_date");
-    const endDateInput = document.getElementById("end_date");
 
-    function createLineChart(data) {
-        const lineData = {
-            labels: data.map(item => item.date),
-            datasets: [
-                {
-                    label: "Total Number of Vehicles",
-                    data: data.map(item => item.total_num_vehicles),
-                    backgroundColor: "rgba(75, 192, 192, 0.2)",
-                    borderColor: "rgba(75, 192, 192, 1)",
-                    borderWidth: 1,
-                },
-            ],
-        };
+    document.addEventListener("DOMContentLoaded", function () {
+        const autoCO2 = 125; // Gramm CO2 pro Kilometer für Auto
+        const escooterCO2 = 20; // Gramm CO2 pro Kilometer für E-Scooter
 
-        const lineOptions = {
-            scales: {
-                x: {
-                    type: "time",
-                    time: {
-                        unit: "day",
-                        displayFormats: {
-                            day: "MMM D",
-                        },
-                    },
-                    ticks: {
-                        source: "auto",
-                    },
-                },
-                y: {
-                    beginAtZero: true,
-                },
-            },
-        };
+        const rangeInput = document.getElementById('range');
+        const fill = document.getElementById('fill');
+        const distanceText = document.getElementById('distance-text');
+        const savingsText = document.getElementById('savings-text');
 
-        const lineChart = new Chart(lineChartCtx, {
-            type: "line",
-            data: lineData,
-            options: lineOptions,
-        });
-    }
+        function calculateCO2Savings() {
+            const distance = parseFloat(rangeInput.value);
+            const savings = (autoCO2 - escooterCO2) * distance;
 
-    async function fetchLineChartData(startDate, endDate) {
-        try {
-            const response = await fetch("https://423521-10.web.fhgr.ch/mobility.php");
-            const data = await response.json();
-            const filteredData = data.filter(item => {
-                const itemDate = new Date(item.date);
-                return itemDate >= startDate && itemDate <= endDate;
-            });
-            return filteredData;
-        } catch (error) {
-            console.error(error);
-            return [];
+            // Begrenze die Einsparung auf 100% (für den Fall, dass sie negativ wird)
+            const percentage = Math.max(0, Math.min(savings, autoCO2 * distance)) / (autoCO2 * distance) * 100;
+
+            fill.style.width = percentage + '%';
+            distanceText.textContent = 'Strecke: ' + distance + ' km';
+            savingsText.textContent = 'CO2-Einsparung: ' + Math.round(savings) + ' g';
         }
-    }
 
-    function handleDateChange() {
-        const startDate = new Date(startDateInput.value);
-        const endDate = new Date(endDateInput.value);
-        if (startDate && endDate) {
-            fetchLineChartData(startDate, endDate)
-                .then(data => {
-                    createLineChart(data);
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        }
-    }
+        // Initialberechnung
+        calculateCO2Savings();
 
-    startDateInput.addEventListener("change", handleDateChange);
-    endDateInput.addEventListener("change", handleDateChange);
-
+        // Event Listener hinzufügen
+        rangeInput.addEventListener('input', calculateCO2Savings);
+    });
+    
