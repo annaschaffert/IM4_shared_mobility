@@ -139,7 +139,7 @@ h2 {
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     font-style: normal;
-    font-size: 114px;
+    font-size: 112px;
     width: 100%;
 }
 
@@ -572,7 +572,6 @@ footer {
 }
 }
 
-
 @media screen and (max-width: 1300px) {
 
 /*----------------------------------------------Header--------------------------------------*/  
@@ -580,43 +579,29 @@ footer {
     font-size: 60px;
 }
 /*----------------------------------------------Startseite--------------------------------------*/ 
-     
 
+.blaue_fleache img {
+    position: relative; /* Positioniere das Bild relativ zum Seitencontainer */
+    margin-left:730px;
+    height: 500px;
+    padding-top: 130px; 
+}
+
+.startseite-text {
+    position: relative;
+    padding-left: 330px;
+    padding-top: 100px;
+}
 .startseite-text::before {
-         height: 85%;
-         margin-top: -40px;
-         left: 410px; /* Anpassen der Position des Strichs zur Seite */
-         width: 5px; /* Breite des Strichs */
-     }
-     .startseite-text {
-        position: relative;
-        padding-left: 440px;
-        position: absolute;
-    }
+    content: '';
+    height: 70%;
+    position: absolute;
+    margin-top: 90px;
+    left: 300px; /* Anpassen der Position des Strichs zur Seite */
+    width: 4px; /* Breite des Strichs */
+    background-color: #F2E7DC; /* Farbe des Strichs */
+}
 
-    .blaue_fleache img {
-        margin-left: 450px;
-        height: 480px;
-        padding-top:860px;
-        position: relative;
-    }
-
-     h2 {
-         font-size: 75px;
-     
-         margin-top: -20px;
-     }
-     
-     h3 {
-         font-size: 40px;
-         margin-top: -60px;
-     }
-     
-     h4 {
-         font-size: 14px;
-         margin-top: -20px;
-    
-     }
 
 /*----------------------------------------Fakten------------------------------------------*/
 #fakten{
@@ -635,105 +620,138 @@ footer {
 }
 }
 
-@media screen and (max-width: 1264px) {
+
+@media screen and (max-width: 1100px) {
 /*----------------------------------------------Startseite--------------------------------------*/
-
-.startseite-text::before {
-    height: 85%;
-    margin-top: -40px;
-    left: 370px; /* Anpassen der Position des Strichs zur Seite */
-    width: 5px; /* Breite des Strichs */
-}
-.startseite-text {
-   position: relative;
-   padding-left: 400px;
-   position: absolute;
-}
-
-.blaue_fleache img {
-   margin-left: 420px;
-   height: 480px;
-   padding-top:860px;
-   position: relative;
-}
-
-h2 {
-    font-size: 65px;
-   
-    margin-top: -20px;
-}
-
-h3 {
-    font-size: 40px;
-    margin-top: -60px;
-}
-
-h4 {
-    font-size: 14px;
-    margin-top: -20px;
-
-}
-
-/*----------------------------------------Fakten------------------------------------------*/
-#fakten{
-    padding-top: 50px;
-    margin: 0 auto;
-    padding-bottom: 120px;
-}
-
-.fakten-text .overlay-text-fakten{
-    margin-right: 20px;
-}
-
-.fakten-text .overlay-text-klein-fakten{
-    margin-top:-10px;
-    margin-right: -380px;
-}
-}
-
-@media screen and (max-width: 1015px) {
-/*----------------------------------------------Startseite--------------------------------------*/
-    
 .abgerundetes-rechteck {
-    width: 1500px;
-    height: 790px; 
+    width: 1800px;
+    height: 860px;
+   
+ }
+
+.blaue_fleache img {
+    position: relative; /* Positioniere das Bild relativ zum Seitencontainer */
+    margin-left:610px;
+    height: 500px;
+    padding-top: 130px; 
+}
+
+.startseite-text {
+    position: relative;
+    padding-left: 230px;
+    padding-top: 100px;
 }
 
 .startseite-text::before {
-    height: 90%;
-    margin-top: -30px;
-    left: 335px; /* Anpassen der Position des Strichs zur Seite */
-    width: 5px; /* Breite des Strichs */
-}
-.startseite-text {
-    position: relative;
-    padding-left: 370px;
+    content: '';
+    height: 70%;
     position: absolute;
-    padding-top: 80px;
-}
-
-.blaue_fleache img {
-    margin-left: 400px;
-    height: 380px;
-    padding-top: 860px;
-    position: relative;
-}
-
-h2 {
-    font-size: 50px;
-
-    margin-top:-15px;
-}
-
-h3 {
-    font-size: 25px;
-    margin-top: -40px;
-}
-
-h4 {
-    font-size: 14px;
-    margin-top: -10px;
-    max-width: 250px;
-    
+    margin-top: 90px;
+    left: 200px; /* Anpassen der Position des Strichs zur Seite */
+    width: 4px; /* Breite des Strichs */
+    background-color: #F2E7DC; /* Farbe des Strichs */
 }
 }        
+
+@media screen and (max-width: 900px) {
+    /*----------------------------------------------Startseite--------------------------------------*/
+    .abgerundetes-rechteck {
+        width: 1900px;
+        height: 860px;
+        margin-right: -100px;
+     }
+    
+    .blaue_fleache img {
+        position: relative; /* Positioniere das Bild relativ zum Seitencontainer */
+        margin-left:540px;
+        height: 500px;
+        padding-top: 130px; 
+    }
+    
+    .startseite-text {
+        position: relative;
+        padding-left: 170px;
+        padding-top: 100px;
+    }
+    
+    .startseite-text::before {
+        content: '';
+        height: 70%;
+        position: absolute;
+        margin-top: 90px;
+        left: 140px; /* Anpassen der Position des Strichs zur Seite */
+        width: 4px; /* Breite des Strichs */
+        background-color: #F2E7DC; /* Farbe des Strichs */
+    }
+}   
+
+@media screen and (max-width: 750px) {
+    /*----------------------------------------------Startseite--------------------------------------*/
+    .abgerundetes-rechteck {
+        width: 1900px;
+        height: 880px;
+        margin-right: -300px;
+}
+    
+    .blaue_fleache img {
+        position: relative; /* Positioniere das Bild relativ zum Seitencontainer */
+        margin-left:490px;
+        height: 500px;
+        padding-top: 130px; 
+}
+    
+    .startseite-text {
+        position: relative;
+        padding-left: 110px;
+        padding-top: 100px;
+}
+    
+    .startseite-text::before {
+        content: '';
+        height: 70%;
+        position: absolute;
+        margin-top: 90px;
+        left: 80px; /* Anpassen der Position des Strichs zur Seite */
+        width: 4px; /* Breite des Strichs */
+        background-color: #F2E7DC; /* Farbe des Strichs */
+}
+}   
+
+@media screen and (max-width: 500px) {
+    /*----------------------------------------------Startseite--------------------------------------*/
+    .abgerundetes-rechteck {
+        width: 1900px;
+        height: 880px;
+        margin-right: -300px;
+}
+    
+    .blaue_fleache img {
+        position: relative; /* Positioniere das Bild relativ zum Seitencontainer */
+        margin-left:490px;
+        height: 500px;
+        padding-top: 130px; 
+}
+    
+    .startseite-text {
+        position: relative;
+        padding-left: 110px;
+        padding-top: 100px;
+}
+    .startseite-text::before {
+        height: 70%;
+        margin-top: 90px;
+        left: 80px; /* Anpassen der Position des Strichs zur Seite */
+        width: 4px; /* Breite des Strichs */
+        background-color: #F2E7DC; /* Farbe des Strichs */
+}
+
+h2 {
+    color: #F2E7DC;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 80px;
+    margin-top: 100px;
+}
+
+}   
