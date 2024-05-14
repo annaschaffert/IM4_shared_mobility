@@ -161,9 +161,7 @@ h4 {
     margin-top: -30px;
 }
 
-/*----------------------------------------Übersichtsseite------------------------------------------*/
-
-
+/*----------------------------------------Übersichtseite------------------------------------------*/
 #uebersichtsseite {
     padding-top: 120px;
     margin: 0 auto;
@@ -173,9 +171,9 @@ h4 {
     align-items: center;
 }
 
-.grid-container {
+.grid-container-uebersichtsseite {
     display: grid;
-    grid-template-columns: 1fr 550px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 5px;
     width: 100%;
@@ -183,7 +181,7 @@ h4 {
 
 .box3, .box4 {
     color: #0D0D0D;
-    font-family: "Roboto", sans-serif; 
+    font-family: "Roboto", sans-serif;
     font-size: 17px;
     font-weight: 300;
     line-height: 1.3;
@@ -192,12 +190,13 @@ h4 {
     word-spacing: -1px;
     letter-spacing: -0.5px;
     text-align: center;
-    padding-top:-20px;
+    padding-top: -20px;
 }
 
 .box1 {
     margin-right: 40px;
 }
+
 .box2 {
     margin: auto 0;
 }
@@ -217,7 +216,6 @@ h4 {
     line-height: 1.3;
     text-align: center;
     margin: 0 auto;
-    margin-top: 40;
 }
 
 .overlay-text {
@@ -242,6 +240,7 @@ h4 {
     position: center;
     padding-bottom: 50px;
 }
+
 
 /*----------------------------------------Fakten------------------------------------------*/
 #fakten{
@@ -462,9 +461,8 @@ footer {
     .hamburger:not(.inactive) .line {
         background-color:#ffffff;
     }
-    
-  /*----------------------------------------------Übersichtsseite--------------------------------------*/  
 
+  /*----------------------------------------------Startseite--------------------------------------*/  
     .abgerundetes-rechteck {
        border-radius: 0%;
        width: 1500px;
@@ -521,32 +519,25 @@ footer {
         line-height: 1.3;
         margin-top: -20px;
     }
-/*----------------------------------------Fakten------------------------------------------*/
-.grid-container {
-    grid-template-columns: 1fr; /* Eine einzige Spalte */
-    gap: 20px;
-}
-.box1, .box2, .box3, .box4, .center-box {
-    width: 100%;
+
+/*----------------------------------------------Übersichtseite--------------------------------------*/  
+
+#uebersichtsseite {
+    padding-top: 300px;
     margin: 0 auto;
-    text-align: center;
-}
-.box1 {
-    order: 1;
-}
-.box3 {
-    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.center-box {
-    order: 3;
+.grid-container-uebersichtsseite {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 5px;
 }
-.box2 {
-    order: 4;
-}
-.box4 {
-    order: 5;
-}
+
+
 .center-box img {
     height: 350px;
     display: block;
@@ -721,8 +712,6 @@ h4 {
 }
 
 
-
-
 @media screen and (max-width: 390px) {
 /*----------------------------------------------Navigation--------------------------------------*/
 .dropdown a{
@@ -748,7 +737,6 @@ h4 {
     width: 4px; /* Breite des Strichs */
     background-color: #F2E7DC; /* Farbe des Strichs */
 }
-<<<<<<< HEAD
 h2 {
     margin-top: 60px;
     font-size: 50px;
@@ -767,7 +755,5 @@ h4 {
     max-width: 250px;
     padding-top: 5px;
 }
-}   
-=======
+}  
 }
->>>>>>> ef65da5dc4518788eb86bae1d11cdcb639cb16ad
