@@ -31,21 +31,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function fetchData() {
     try {
-        // Anstatt Daten von der API abzurufen, generiere randomisierte Daten
         const randomData = [];
-        for (let i = 0; i < 24; i++) { // 24 Stunden im Tag
-            let randomNumber;
-            if (i >= 0 && i < 9) {
-                // Zufallszahlen zwischen 30 und 40 für die Stunden von 0 bis 9 Uhr
-                randomNumber = Math.floor(Math.random() * (40 - 30 + 1)) + 30;
-            } else if (i >= 9 && i < 17) {
-                // Zufallszahlen zwischen 10 und 30 für die Stunden von 10 bis 16 Uhr
-                randomNumber = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
-            } else {
-                // Zufallszahlen zwischen 2 und 40 für die Stunden von 17 bis 23 Uhr
-                randomNumber = Math.floor(Math.random() * (40 - 2 + 1)) + 2;
+        for (let day = 0; day < 7; day++) { // Für jeden Wochentag
+            for (let i = 0; i < 24; i++) { // 24 Stunden im Tag
+                let randomNumber;
+                if (i >= 0 && i < 9) {
+                    randomNumber = Math.floor(Math.random() * (40 - 30 + 1)) + 30;
+                } else if (i >= 9 && i < 17) {
+                    randomNumber = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
+                } else {
+                    randomNumber = Math.floor(Math.random() * (40 - 2 + 1)) + 2;
+                }
+                randomData.push(randomNumber);
             }
-            randomData.push(randomNumber);
         }
         return randomData;
     } catch (error) {
@@ -53,6 +51,7 @@ async function fetchData() {
         return [];
     }
 }
+
 
 async function main() {
     const total_num_vehicles = await fetchData();
@@ -71,16 +70,29 @@ async function main() {
         datasets: [],
     };
 
+    const colors = [
+        "rgba(4, 104, 139, 0.2)",    // Dunkelblau
+        "rgba(30, 144, 255, 0.2)", // Blau
+        "rgba(0, 191, 255, 0.2)",  // Mittelblau
+        "rgba(135, 206, 235, 0.2)",// Hellblau
+        "rgba(173, 216, 230, 0.2)",// Hellblau
+        "rgba(176, 224, 230, 0.2)",// Hellblau
+        "rgba(240, 248, 255, 0.2)" // Azurblau
+    ];    
+    
+    
     weekdays.forEach((weekday, index) => {
         const dataset = {
             label: weekday,
             data: formattedData.slice(index * hoursOfDay.length, (index + 1) * hoursOfDay.length),
-            backgroundColor: `rgba(75, 192, 192, ${index / weekdays.length})`,
-            borderColor: "rgba(75, 192, 192, 1)",
+            backgroundColor: colors[index % colors.length], // Use a different color from the array for each dataset
+            borderColor: colors[index % colors.length],
             borderWidth: 1,
+            hidden: !["Montag", "Dienstag", "Mittwoch"].includes(weekday), // Verstecke Datasets außer Montag, Dienstag und Mittwoch
         };
         data.datasets.push(dataset);
     });
+    
 
     const options = {
         scales: {
@@ -99,6 +111,17 @@ async function main() {
         type: "radar",
         data: data,
         options: options,
+    });
+
+    // Eventlistener zum Ein- und Ausblenden von Datasets hinzufügen
+    const legend = radarChart.legend;
+    legend.legendItems.forEach(item => {
+        item.textEl.addEventListener("click", function () {
+            const datasetIndex = item.datasetIndex;
+            const dataset = radarChart.data.datasets[datasetIndex];
+            dataset.hidden = !dataset.hidden; // Umkehren Sie den aktuellen Status
+            radarChart.update(); // Aktualisiere die Chartansicht
+        });
     });
 }
 
