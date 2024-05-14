@@ -592,7 +592,7 @@ footer {
     top: 50%; /* Zentrieren des Textes vertikal */
 }
 
-
+}
 
 
 @media screen and (max-width: 1300px) {
@@ -790,4 +790,4 @@ h4 {
     width: 4px; /* Breite des Strichs */
     background-color: #F2E7DC; /* Farbe des Strichs */
 }
-}   
+}
