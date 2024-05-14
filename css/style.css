@@ -140,7 +140,7 @@ h2 {
     font-weight: 900;
     font-style: normal;
     font-size: 114px;
-    margin-right: 300px;
+    width: 100%;
 }
 
 h3 {
@@ -403,7 +403,6 @@ footer {
         font-weight: 900;
         font-style: normal;
         font-size: 100px;
-        margin-right: 300px;
         margin-top: 100px;
     }
     
@@ -540,26 +539,26 @@ footer {
 .startseite-text::before {
          height: 85%;
          margin-top: -40px;
-         left: 425px; /* Anpassen der Position des Strichs zur Seite */
+         left: 410px; /* Anpassen der Position des Strichs zur Seite */
          width: 5px; /* Breite des Strichs */
      }
      .startseite-text {
         position: relative;
-        padding-left: 450px;
+        padding-left: 440px;
         position: absolute;
     }
 
     .blaue_fleache img {
-        margin-left: 500px;
-        height: 400px;
-        padding-top:920px;
+        margin-left: 450px;
+        height: 480px;
+        padding-top:860px;
         position: relative;
     }
 
      h2 {
-         font-size: 80px;
-         margin-right: 360px;
-         margin-top: -40px;
+         font-size: 75px;
+     
+         margin-top: -20px;
      }
      
      h3 {
@@ -590,45 +589,45 @@ footer {
 }
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1264px) {
 /*----------------------------------------------Startseite--------------------------------------*/
 
+.startseite-text::before {
+    height: 85%;
+    margin-top: -40px;
+    left: 370px; /* Anpassen der Position des Strichs zur Seite */
+    width: 5px; /* Breite des Strichs */
+}
+.startseite-text {
+   position: relative;
+   padding-left: 400px;
+   position: absolute;
+}
 
+.blaue_fleache img {
+   margin-left: 420px;
+   height: 480px;
+   padding-top:860px;
+   position: relative;
+}
 
-    .startseite-text::before {
-        height: 85%;
-        margin-top: -8px;
-        left: 335px; /* Anpassen der Position des Strichs zur Seite */
-        width: 5px; /* Breite des Strichs */
-    }
-    .startseite-text {
-        position: relative;
-        padding-left: 370px;
-        position: absolute;
-    }
+h2 {
+    font-size: 65px;
+   
+    margin-top: -20px;
+}
 
-    .blaue_fleache img {
-        margin-left: 400px;
-        height: 400px;
-        padding-top: 780px;
-        position: relative;
-    }
+h3 {
+    font-size: 40px;
+    margin-top: -60px;
+}
 
-    h2 {
-        font-size: 60px;
-        margin-right: 300px;
-        margin-top:-15px;
-    }
-    
-    h3 {
-        font-size: 25px;
-        margin-top: -50px;
-    }
-    
-    h4 {
-        font-size: 14px;
-        margin-top: -10px;
-    }
+h4 {
+    font-size: 14px;
+    margin-top: -20px;
+
+}
+
 /*----------------------------------------Fakten------------------------------------------*/
 #fakten{
     padding-top: 50px;
@@ -676,7 +675,7 @@ footer {
 
 h2 {
     font-size: 50px;
-    margin-right: 300px;
+
     margin-top:-15px;
 }
 
