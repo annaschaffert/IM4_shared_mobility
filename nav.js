@@ -125,28 +125,34 @@ async function main() {
     });
 }
 
-const autoCO2 = 125; // Gramm CO2 pro Kilometer für Auto
-const escooterCO2 = 25; // Gramm CO2 pro Kilometer für E-Scooter
+    // co2 barometer _________________________________________________________
 
-const rangeInput = document.getElementById('range');
-const fill = document.getElementById('fill');
-const distanceText = document.getElementById('distance-text');
-const savingsText = document.getElementById('savings-text');
 
-function calculateCO2Savings() {
-    const distance = parseFloat(rangeInput.value);
-    const savings = (autoCO2 - escooterCO2) * distance;
+    document.addEventListener("DOMContentLoaded", function () {
+        const autoCO2 = 125; // Gramm CO2 pro Kilometer für Auto
+        const escooterCO2 = 20; // Gramm CO2 pro Kilometer für E-Scooter
 
-    // Begrenze die Einsparung auf 100% (für den Fall, dass sie negativ wird)
-    const percentage = Math.max(0, Math.min(savings, autoCO2 * distance)) / (autoCO2 * distance) * 100;
+        const rangeInput = document.getElementById('range');
+        const fill = document.getElementById('fill');
+        const distanceText = document.getElementById('distance-text');
+        const savingsText = document.getElementById('savings-text');
 
-    fill.style.width = percentage + '%';
-    distanceText.textContent = 'Strecke: ' + distance + ' km';
-    savingsText.textContent = 'CO2-Einsparung: ' + Math.round(savings) + ' g';
-}
+        function calculateCO2Savings() {
+            const distance = parseFloat(rangeInput.value);
+            const savings = (autoCO2 - escooterCO2) * distance;
 
-// Initialberechnung
-calculateCO2Savings();
+            // Begrenze die Einsparung auf 100% (für den Fall, dass sie negativ wird)
+            const percentage = Math.max(0, Math.min(savings, autoCO2 * distance)) / (autoCO2 * distance) * 100;
 
-// Event Listener hinzufügen
-rangeInput.addEventListener('input', calculateCO2Savings);
+            fill.style.width = percentage + '%';
+            distanceText.textContent = 'Strecke: ' + distance + ' km';
+            savingsText.textContent = 'CO2-Einsparung: ' + Math.round(savings) + ' g';
+        }
+
+        // Initialberechnung
+        calculateCO2Savings();
+
+        // Event Listener hinzufügen
+        rangeInput.addEventListener('input', calculateCO2Savings);
+    });
+    
