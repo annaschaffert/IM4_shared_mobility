@@ -334,6 +334,31 @@ h4 {
 /*----------------------------------------Radar Chart------------------------------------------*/
 
 
+.radar-chart h2{
+    color: #F2E7DC;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Add position relative to h1 */
+    opacity: 0.7;
+}
+
+.boxchart {
+    color: #F2E7DC;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Add position relative to h1 */
+    opacity: 0.7;
+}
+
+
 #myChart {
     position: relative;
     margin: 0 auto;
@@ -342,6 +367,8 @@ h4 {
     height: 500px;
     padding-top: 0px;
 }
+
+
 /*----------------------------------------Radar Chart------------------------------------------*/
 
 #lineChart {
