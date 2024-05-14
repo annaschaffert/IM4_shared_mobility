@@ -125,82 +125,28 @@ async function main() {
     });
 }
 
-    // add a line chart
+const autoCO2 = 125; // Gramm CO2 pro Kilometer für Auto
+const escooterCO2 = 25; // Gramm CO2 pro Kilometer für E-Scooter
 
-    const lineChartCtx = document.getElementById("lineChart").getContext("2d");
-    const startDateInput = document.getElementById("start_date");
-    const endDateInput = document.getElementById("end_date");
+const rangeInput = document.getElementById('range');
+const fill = document.getElementById('fill');
+const distanceText = document.getElementById('distance-text');
+const savingsText = document.getElementById('savings-text');
 
-    function createLineChart(data) {
-        const lineData = {
-            labels: data.map(item => item.date),
-            datasets: [
-                {
-                    label: "Total Number of Vehicles",
-                    data: data.map(item => item.total_num_vehicles),
-                    backgroundColor: "rgba(75, 192, 192, 0.2)",
-                    borderColor: "rgba(75, 192, 192, 1)",
-                    borderWidth: 1,
-                },
-            ],
-        };
+function calculateCO2Savings() {
+    const distance = parseFloat(rangeInput.value);
+    const savings = (autoCO2 - escooterCO2) * distance;
 
-        const lineOptions = {
-            scales: {
-                x: {
-                    type: "time",
-                    time: {
-                        unit: "day",
-                        displayFormats: {
-                            day: "MMM D",
-                        },
-                    },
-                    ticks: {
-                        source: "auto",
-                    },
-                },
-                y: {
-                    beginAtZero: true,
-                },
-            },
-        };
+    // Begrenze die Einsparung auf 100% (für den Fall, dass sie negativ wird)
+    const percentage = Math.max(0, Math.min(savings, autoCO2 * distance)) / (autoCO2 * distance) * 100;
 
-        const lineChart = new Chart(lineChartCtx, {
-            type: "line",
-            data: lineData,
-            options: lineOptions,
-        });
-    }
+    fill.style.width = percentage + '%';
+    distanceText.textContent = 'Strecke: ' + distance + ' km';
+    savingsText.textContent = 'CO2-Einsparung: ' + Math.round(savings) + ' g';
+}
 
-    async function fetchLineChartData(startDate, endDate) {
-        try {
-            const response = await fetch("https://423521-10.web.fhgr.ch/mobility.php");
-            const data = await response.json();
-            const filteredData = data.filter(item => {
-                const itemDate = new Date(item.date);
-                return itemDate >= startDate && itemDate <= endDate;
-            });
-            return filteredData;
-        } catch (error) {
-            console.error(error);
-            return [];
-        }
-    }
+// Initialberechnung
+calculateCO2Savings();
 
-    function handleDateChange() {
-        const startDate = new Date(startDateInput.value);
-        const endDate = new Date(endDateInput.value);
-        if (startDate && endDate) {
-            fetchLineChartData(startDate, endDate)
-                .then(data => {
-                    createLineChart(data);
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        }
-    }
-
-    startDateInput.addEventListener("change", handleDateChange);
-    endDateInput.addEventListener("change", handleDateChange);
-
+// Event Listener hinzufügen
+rangeInput.addEventListener('input', calculateCO2Savings);
