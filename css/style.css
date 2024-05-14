@@ -218,9 +218,22 @@ h4 {
     margin: 0 auto;
 }
 
-.overlay-text {
+.box1 .overlay-text {
     position: absolute;
-    top: 35%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: #A9D9D0;
+    font-size: 50px;
+    text-align: center;
+}
+
+
+.box2 .overlay-text {
+    position: absolute;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Roboto", sans-serif;
@@ -244,7 +257,7 @@ h4 {
 
 /*----------------------------------------Fakten------------------------------------------*/
 #fakten{
-    padding-top: 50px;
+    padding-top: -50px;
     margin: 0 auto;
     padding-bottom: 120px;
 }
@@ -490,7 +503,7 @@ footer {
     .startseite-text {
         position: relative;
         padding-left: 410px;
-        padding-top: 100px;
+        padding-top: 70px;
     }
     
     h2 {
@@ -523,25 +536,103 @@ footer {
 /*----------------------------------------------Übersichtseite--------------------------------------*/  
 
 #uebersichtsseite {
-    padding-top: 300px;
+    padding-top: 340px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 .grid-container-uebersichtsseite {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 5px;
 }
 
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: #A9D9D0;
+    font-size: 50px;
+    text-align: center;
+}
 
 .center-box img {
     height: 350px;
     display: block;
     margin: 0 auto;
+    padding-top: 50px;
+}
+
+/*----------------------------------------Fakten------------------------------------------*/
+#fakten{
+    padding-top: -150px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.map-svg img {
+    max-width: 50%; /* Maximale Bildbreite */
+    display: block; /* Blockelement */
+    margin: 0 auto;
+    margin-top: -120px;
+    position: relative;
+}
+
+.fakten-text h1{
+    color: #F2E7DC;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 180px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Add position relative to h1 */
+    opacity: 0.7;
+}
+
+.fakten-text .overlay-text-fakten{
+    color: #0D0D0D;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 25px;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: -45px;
+    margin-right: 250px;
+    max-width: 500px;
+    transform: translate(-50%, -50%);
+    position: relative; /* Add position relative to h1 */
+}
+
+.fakten-text .overlay-text-klein-fakten{
+    color: #858585;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 auto;
+    margin-top:-10px;
+    margin-right: -150px;
+    max-width: 900px;
+    transform: translate(-50%, -50%);
+    position: relative; /* Add position relative to h1 */
+}
+
+/*----------------------------------------Chart------------------------------------------*/
+
+.radar-chart h2{
+    font-size: 110px;
 }
 }
 
@@ -573,6 +664,40 @@ footer {
     background-color: #F2E7DC; /* Farbe des Strichs */
 }
 
+/*------------------Übersichtseite-------------------*/
+#uebersichtsseite {
+    padding-top: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.grid-container-uebersichtsseite {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 5px;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: #A9D9D0;
+    font-size: 50px;
+    text-align: center;
+}
+
+.center-box img {
+    height: 350px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 50px;
+}
 
 /*----------------------------------------Fakten------------------------------------------*/
 #fakten{
@@ -589,19 +714,23 @@ footer {
     margin-top:-10px;
     margin-right: -260px;
 }
+
+.map-svg img {
+    margin-bottom: 60px;
+}
 }
 
 
 @media screen and (max-width: 1100px) {
 /*----------------------------------------------Startseite--------------------------------------*/
 .abgerundetes-rechteck {
-    width: 1800px;
+    width: 1100px;
     height: 860px;
  }
 
 .startseite-text {
     position: relative;
-    padding-left: 230px;
+    padding-left: 340px;
     padding-top: 100px;
 }
 
@@ -610,11 +739,106 @@ footer {
     height: 70%;
     position: absolute;
     margin-top: 90px;
-    left: 200px; /* Anpassen der Position des Strichs zur Seite */
+    left: 290px; /* Anpassen der Position des Strichs zur Seite */
     width: 4px; /* Breite des Strichs */
     background-color: #F2E7DC; /* Farbe des Strichs */
 }
-}        
+
+/*------------------Übersichtseite-------------------*/
+#uebersichtsseite {
+    padding-top: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.grid-container-uebersichtsseite {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 50px;
+}
+
+.box4{
+    margin: 0 auto;
+    position: absolute;
+    margin-left: 260px;
+    margin-top: 260px;
+    margin-bottom: 40px;
+}
+
+.box2 {
+    position: relative;
+    color: #F2E7DC;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 190px;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 150px;
+    align-items: center;
+    padding-bottom: -60px;
+}
+
+
+.box1{
+    position: relative;
+    color: #F2E7DC;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 190px;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 auto;
+    padding-top:-190px;
+}
+
+
+
+.overlay-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: #A9D9D0;
+    font-size: 50px;
+    text-align: center;
+}
+
+.center-box img {
+    display: none;
+}
+
+
+
+/*----------------------------------------Fakten------------------------------------------*/
+#fakten{
+    padding-top: 50px;
+    margin: 0 auto;
+    padding-bottom: 120px;
+}
+
+.fakten-text .overlay-text-fakten{
+    margin-right: 50px;
+    margin-top: -30px;
+}
+
+.fakten-text .overlay-text-klein-fakten{
+    margin-top: 10px;
+    margin-right: -350px;
+}
+
+.map-svg img {
+    margin-bottom: 60px;
+}
+}
+     
 
 @media screen and (max-width: 900px) {
     /*----------------------------------------------Startseite--------------------------------------*/
