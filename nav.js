@@ -29,70 +29,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-async function fetchData() {
+async function fetchDataFromPHP() {
     try {
-        const randomData = [];
-        for (let day = 0; day < 7; day++) { // Für jeden Wochentag
-            for (let i = 0; i < 24; i++) { // 24 Stunden im Tag
-                let randomNumber;
-                if (i >= 0 && i < 9) {
-                    randomNumber = Math.floor(Math.random() * (40 - 30 + 1)) + 30;
-                } else if (i >= 9 && i < 17) {
-                    randomNumber = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
-                } else {
-                    randomNumber = Math.floor(Math.random() * (40 - 2 + 1)) + 2;
-                }
-                randomData.push(randomNumber);
-            }
+        const response = await fetch('mobility.php');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data from PHP');
         }
-        return randomData;
+        return await response.json();
     } catch (error) {
         console.error(error);
         return [];
     }
 }
 
-
 async function main() {
-    const total_num_vehicles = await fetchData();
-    console.log(total_num_vehicles);
+    const total_num_vehicles = await fetchDataFromPHP();
 
     const ctx = document.getElementById("myChart").getContext("2d");
 
-    // Die generierten Zufallsdaten werden nun verwendet
-    const formattedData = total_num_vehicles;
-
-    const weekdays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
-
-    const hoursOfDay = [0, 3, 6, 9, 12, 15, 18, 21];
     const data = {
-        labels: hoursOfDay.map(hour => hour + " Uhr"),
-        datasets: [],
-    };
-
-    const colors = [
-        "rgba(4, 104, 139, 0.2)",    // Dunkelblau
-        "rgba(30, 144, 255, 0.2)", // Blau
-        "rgba(0, 191, 255, 0.2)",  // Mittelblau
-        "rgba(135, 206, 235, 0.2)",// Hellblau
-        "rgba(173, 216, 230, 0.2)",// Hellblau
-        "rgba(176, 224, 230, 0.2)",// Hellblau
-        "rgba(240, 248, 255, 0.2)" // Azurblau
-    ];    
-    
-    
-    weekdays.forEach((weekday, index) => {
-        const dataset = {
-            label: weekday,
-            data: formattedData.slice(index * hoursOfDay.length, (index + 1) * hoursOfDay.length),
-            backgroundColor: colors[index % colors.length], // Use a different color from the array for each dataset
-            borderColor: colors[index % colors.length],
+        labels: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"],
+        datasets: total_num_vehicles.map((entry, index) => ({
+            label: entry.weekday,
+            data: entry.total_num_vehicles,
+            backgroundColor: "rgba(30, 144, 255, 0.2)", // Blau
+            borderColor: "rgba(30, 144, 255, 1)", // Blau
             borderWidth: 1,
-            hidden: !["Montag", "Dienstag", "Mittwoch"].includes(weekday), // Verstecke Datasets außer Montag, Dienstag und Mittwoch
-        };
-        data.datasets.push(dataset);
-    });
-    
+            hidden: ![0, 1, 2].includes(index), // Verstecke Montag, Dienstag, Mittwoch standardmäßig
+        })),
+    };
 
     const options = {
         scales: {
@@ -101,11 +66,10 @@ async function main() {
                     display: false
                 },
                 suggestedMin: 0,
-                suggestedMax: 20
+                suggestedMax: 50 // Maximalwert anpassen
             }
         }
     };
-    
 
     const radarChart = new Chart(ctx, {
         type: "radar",
@@ -124,6 +88,10 @@ async function main() {
         });
     });
 }
+
+main();
+
+
 
     // co2 barometer _________________________________________________________
 
