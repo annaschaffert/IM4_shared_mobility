@@ -342,22 +342,41 @@ h4 {
     font-size: 200px;
     margin: 0 auto;
     text-align: center;
-    position: relative; /* Add position relative to h1 */
+    position: relative; /* Add position relative to h2 */
     opacity: 0.7;
 }
 
-.boxchart {
-    color: #F2E7DC;
+.boxchart{
+    color: #0D0D0D;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 35px;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: -45px;
+    margin-right: 330px;
+    max-width: 500px;
+    transform: translate(-50%, -50%);
+    position: relative; /* Add position relative to h2 */
+}
+
+.radar-chart .boxchart2{
+    color: #858585;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 200px;
-    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.3;
     text-align: center;
+    margin: 0 auto;
+    margin-top:-10px;
+    margin-right: -40px;
+    max-width: 900px;
+    transform: translate(-50%, -50%);
     position: relative; /* Add position relative to h1 */
-    opacity: 0.7;
 }
-
 
 #myChart {
     position: relative;
@@ -368,17 +387,81 @@ h4 {
     padding-top: 0px;
 }
 
+/*----------------------------------------einsparung co2 Barometer------------------------------------------*/
 
-/*----------------------------------------Radar Chart------------------------------------------*/
-
-#lineChart {
-    position: relative;
+.barometer-container {
+    width: 400px;
     margin: 0 auto;
-    width: 100% !important;
-    max-width: 600px;
-    height: 500px;
-    padding-top: 0px;
+    padding: 20px;
 }
+
+.barometer-container2 h2 {
+    color: #F2E7DC;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
+}
+
+.barometer {
+    width: 100%;
+    height: 30px;
+    background-color: #f0f0f0;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.fill {
+    height: 100%;
+    background-color: green;
+    border-radius: 5px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #f0f0f0;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.text {
+    text-align: center;
+}
+
+
+
 /*----------------------------------------Footer------------------------------------------*/
 
 footer {
