@@ -124,6 +124,7 @@
     position: relative; /* Positioniere das Bild relativ zum Seitencontainer */
     height: 800px;
     margin-top: -540px;
+    padding-left:800px ;
 }
 
 .startseite-text {
@@ -162,61 +163,52 @@ h4 {
 
 /*----------------------------------------Übersichtsseite------------------------------------------*/
 
-#uebersichtsseite{
+
+#uebersichtsseite {
     padding-top: 120px;
     margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 550px 1fr; /* Zwei Spalten, das Bild hat eine feste Breite von 200px */
-    grid-template-rows: auto; /* Automatische Höhe für die beiden Reihen */
-    gap: 5px; /* Abstand zwischen den Grid-Elementen */
+    grid-template-columns: 1fr 550px 1fr;
+    grid-template-rows: auto;
+    gap: 5px;
+    width: 100%;
 }
 
-
-.box1{
+.box3, .box4 {
     color: #0D0D0D;
     font-family: "Roboto", sans-serif; 
     font-size: 17px;
     font-weight: 300;
     line-height: 1.3;
+    max-width: 300px;
+    margin: 0 auto;
+    word-spacing: -1px;
+    letter-spacing: -0.5px;
     text-align: center;
-    max-width: 300px; /* Maximalbreite des Textcontainers */
-    margin: 0 auto; /* Zentrieren des Textcontainers */
+    padding-top:-20px;
+}
+
+.box1 {
     margin-right: 40px;
-    word-spacing: -1px; /* Beispielwert, anpassen nach Bedarf */
-    letter-spacing: -0.5px; /* Beispielwert, anpassen nach Bedarf */
+}
+.box2 {
+    margin: auto 0;
 }
 
-.box2{
-    color: #F2E7DC;
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 190px;
-    line-height: 1.3;
-    text-align: center;
-    margin-right: 200px;
-}
-
-.box4{
-    color: #0D0D0D;
-    font-family: "Roboto", sans-serif; 
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 1.3;
-    text-align: center;
-    max-width: 300px; /* Maximalbreite des Textcontainers */
-    margin: 0 auto; /* Zentrieren des Textcontainers */
+.box4 {
     margin-left: 55px;
     margin-top: 20px;
-    word-spacing: -1px; /* Beispielwert, anpassen nach Bedarf */
-    letter-spacing: -0.5px; /* Beispielwert, anpassen nach Bedarf */
 }
 
-.box3{
+.box1, .box2 {
+    position: relative;
     color: #F2E7DC;
     font-family: "Roboto", sans-serif;
     font-weight: 600;
@@ -224,12 +216,25 @@ h4 {
     font-size: 190px;
     line-height: 1.3;
     text-align: center;
-    margin-left: 200px;
+    margin: 0 auto;
+    margin-top: 40;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: #A9D9D0;
+    font-size: 50px;
+    text-align: center;
 }
 
 .center-box {
-    grid-column: 2; /* Das Bild soll in der Mitte der zweiten Spalte sein */
-    grid-row: 1 / span 2; /* Das Bild soll über beide Reihen reichen */
+    grid-column: 2;
+    grid-row: 1 / span 2;
 }
 
 .center-box img {
@@ -237,39 +242,6 @@ h4 {
     position: center;
     padding-bottom: 50px;
 }
-
-.box2 {
-    position: relative; /* Set the position to relative for the overlay text to be positioned relative to this box */
-}
-
-.box2 .overlay-text {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    color: #A9D9D0;
-    font-size: 50px; /* Adjust the font size */
-    text-align: center; /* Center the text */
-}
-
-.box3 {
-    position: relative; /* Set the position to relative for the overlay text to be positioned relative to this box */
-}
-
-.box3 .overlay-text {
-    position: absolute;
-    top: 40%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%);
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    color: #A9D9D0;
-    font-size: 50px; /* Adjust the font size */
-    text-align: center; /* Center the text */
-}
-
 
 /*----------------------------------------Fakten------------------------------------------*/
 #fakten{
@@ -530,7 +502,6 @@ footer {
         font-style: normal;
         font-size: 40px;
         margin-top: -90px;
-        
     }
     
     h4 {
@@ -541,46 +512,35 @@ footer {
         line-height: 1.3;
         margin-top: -20px;
     }
-
-/*----------------------------------------Übersichtsseite------------------------------------------*/
-
-#uebersichtsseite {
-    padding-top: 230px;
-    margin: 0 auto;
-}
-
+/*----------------------------------------Fakten------------------------------------------*/
 .grid-container {
-    display: grid;
     grid-template-columns: 1fr; /* Eine einzige Spalte */
-    grid-template-rows: auto; /* Automatische Höhe für die Reihen */
-    gap: 5px; /* Abstand zwischen den Grid-Elementen */
+    gap: 20px;
 }
-
-/* Zur Sicherheit, setzen wir die Breite der Boxen auf 100%, damit sie die gesamte Breite der Spalte einnehmen */
-.box1, .box2, .box3, .box4 {
+.box1, .box2, .box3, .box4, .center-box {
     width: 100%;
-    margin: 0 auto; /* Zentrieren der Boxen */
+    margin: 0 auto;
+    text-align: center;
 }
-
-/* Da wir nur eine Spalte haben, können wir das Zentrieren der Boxen entfernen */
+.box1 {
+    order: 1;
+}
+.box3 {
+    order: 2;
+}
 .center-box {
-    grid-column: auto;
+    order: 3;
 }
-
-/* Wir stellen sicher, dass das Bild in der Mitte der Spalte bleibt */
+.box2 {
+    order: 4;
+}
+.box4 {
+    order: 5;
+}
 .center-box img {
+    height: 350px;
     display: block;
     margin: 0 auto;
-    height: 350px;
-}
-
-/* Zusätzliche Anpassungen für die Textboxen */
-.box2 .overlay-text{
-    top: 55%; /* Zentrieren des Textes vertikal */
-}
-
-.box3 .overlay-text {
-    top: 50%; /* Zentrieren des Textes vertikal */
 }
 
 
@@ -657,7 +617,7 @@ footer {
 
 .startseite-text {
     position: relative;
-    padding-left: 330px;
+    padding-left: 390px;
     padding-top: 100px;
 }
 .startseite-text::before {
@@ -665,7 +625,7 @@ footer {
     height: 70%;
     position: absolute;
     margin-top: 90px;
-    left: 300px; /* Anpassen der Position des Strichs zur Seite */
+    left: 340px; /* Anpassen der Position des Strichs zur Seite */
     width: 4px; /* Breite des Strichs */
     background-color: #F2E7DC; /* Farbe des Strichs */
 }
@@ -792,7 +752,6 @@ h2 {
     margin-top: 60px;
     font-size: 70px;
     width: 100%;
-    
 }
 
 h3 {
@@ -822,20 +781,37 @@ h4 {
 .abgerundetes-rechteck {
     width: 390px;
     height: 844px;
-    margin-right: 40px;
     padding-left: 70px;
 }
 
 .startseite-text {
     position: relative;
-    padding-left: 70px;
-    padding-top: 10px;
+    padding-left: 50px;
+    padding-top: 30px;
 }
 .startseite-text::before {
-    height: 80%;
-    margin-top: 80px;
-    left: 40px; /* Anpassen der Position des Strichs zur Seite */
+    height: 85%;
+    margin-top: 60px;
+    left: 25px; /* Anpassen der Position des Strichs zur Seite */
     width: 4px; /* Breite des Strichs */
     background-color: #F2E7DC; /* Farbe des Strichs */
+}
+h2 {
+    margin-top: 60px;
+    font-size: 50px;
+    width: 100%;
+}
+
+h3 {
+    font-size: 30px;
+    padding-top: 50px;
+}
+
+h4 {
+    color: #0D0D0D;
+    font-family: "Roboto", sans-serif; 
+    font-size: 15px;
+    max-width: 250px;
+    padding-top: 5px;
 }
 }   
