@@ -35,8 +35,8 @@ async function fetchData() {
         const data = await response.json();
         return data;
     } catch (error) {
-        // Handle any errors that occur during the fetch
         console.error(error);
+        return [];
     }
 }
 
@@ -50,7 +50,7 @@ async function main() {
 
     console.log(formattedData);
 
-    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const weekdays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
 
     const hoursOfDay = [0, 3, 6, 9, 12, 15, 18, 21];
     const data = {
@@ -70,12 +70,17 @@ async function main() {
     });
 
     const options = {
-        scale: {
-            ticks: {
-                beginAtZero: true
-            },
-        },
+        scales: {
+            r: {
+                angleLines: {
+                    display: false
+                },
+                suggestedMin: 0,
+                suggestedMax: 20
+            }
+        }
     };
+    
 
     const radarChart = new Chart(ctx, {
         type: "radar",
