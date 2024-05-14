@@ -342,7 +342,16 @@ h4 {
     height: 500px;
     padding-top: 0px;
 }
+/*----------------------------------------Radar Chart------------------------------------------*/
 
+#lineChart {
+    position: relative;
+    margin: 0 auto;
+    width: 100% !important;
+    max-width: 600px;
+    height: 500px;
+    padding-top: 0px;
+}
 /*----------------------------------------Footer------------------------------------------*/
 
 footer {
