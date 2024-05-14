@@ -537,6 +537,7 @@ footer {
 .box3 {
     order: 2;
 }
+
 .center-box {
     order: 3;
 }
@@ -551,7 +552,6 @@ footer {
     display: block;
     margin: 0 auto;
 }
-
 }
 
 
