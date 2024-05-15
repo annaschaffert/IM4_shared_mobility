@@ -1,3 +1,8 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     justify-content: center;
     align-items: center;
@@ -105,7 +110,7 @@ body {
 
 .abgerundetes-rechteck {
     position: absolute;
-    width: 940px;
+    width: 55vw;
     height: 600px;
     background-color: #A9D9D0;
     border-radius: 210px 0 0 210px;
@@ -413,6 +418,7 @@ footer {
     font-weight: 300;
     font-size: 17px;
     margin-top: 50px;
+   
 }
 
 
@@ -436,7 +442,7 @@ footer {
   /*----------------------------------------------Startseite--------------------------------------*/  
     .abgerundetes-rechteck {
        border-radius: 0%;
-       width: 1500px;
+       width: 100vw;
        height: 860px;
        margin-top: -40px;
        margin-bottom: 20px;
@@ -754,7 +760,6 @@ footer {
 @media screen and (max-width: 1100px) {
 /*----------------------------------------------Startseite--------------------------------------*/
 .abgerundetes-rechteck {
-    width: 1100px;
     height: 860px;
  }
 
@@ -918,7 +923,6 @@ footer {
 @media screen and (max-width: 900px) {
     /*----------------------------------------------Startseite--------------------------------------*/
 .abgerundetes-rechteck {
-        width: 900px;
         height: 784px;  
 }
 
@@ -1072,7 +1076,6 @@ footer {
 @media screen and (max-width: 750px) {
     /*----------------------------------------------Startseite--------------------------------------*/
     .abgerundetes-rechteck {
-        width: 800px;
         height: 850px;
         
 }
@@ -1204,65 +1207,141 @@ footer {
     font-weight: 300;
     font-size: 17px;
     margin-top: 50px;
-    width: 95%;
 }
-
 }   
 
 @media screen and (max-width: 600px) {
- 
 /*----------------------------------------------Startseite--------------------------------------*/
-.abgerundetes-rechteck {
-    width: 800px;
-    height: 850px;
-    
-}
-
-
-.startseite-text {
-    position: relative;
-    padding-left: 80px;
-    padding-top: 20px;
-}   
-.startseite-text::before {
-    content: '';
-    height: 90%;
-    position: absolute;
-    margin-top: 140px;
-    left: 50px; /* Anpassen der Position des Strichs zur Seite */
-    width: 5px; /* Breite des Strichs */
-    background-color: #F2E7DC; /* Farbe des Strichs */
-}
-
 h2 {
-    color: #F2E7DC;
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 90px;
-    margin-top: 200px;
+        color: #F2E7DC;
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 75px;
+        margin-top: 100px;
 }
-
+    
 h3 {
-    color: #0D0D0D;
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 50px;
-    margin-top: -80px;
-    width: 130%;
+        color: #0D0D0D;
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 40px;
+        margin-top: -60px;
+}
+    
+h4 {
+        color: #0D0D0D;
+        font-family: "Roboto", sans-serif; 
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.3;
+        margin-top: -20px;
+        max-width: 350px;
 }
 
-h4 {
-    color: #0D0D0D;
-    font-family: "Roboto", sans-serif; 
+/*------------------Übersichtseite-------------------*/
+#uebersichtsseite {
+    padding-top: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+    margin-right: 30px;
+}
+
+.grid-container-uebersichtsseite {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 50px;
+}
+
+.box4{
+    margin: 0 auto;
+    position: absolute;
+    margin-left: 60px;
+    margin-top: 230px;
+    margin-bottom: 120px;
+}
+
+.box1{
+    font-size:140px;
+}
+
+.box2{
+    font-size:140px;
+    font-weight: 800;
+}
+.box1 .overlay-text{
+    font-size: 40px;
+    top: 55%;
+}
+
+.box2 .overlay-text{
+    font-size: 40px;
+    top: 75%;
+}
+
+/*----------------------------------------Chart------------------------------------------*/
+
+.radar-chart h2{
+    font-size: 80px;
+    text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
+    padding-left: 5px;
+}
+
+.boxchart{
     font-size: 25px;
-    line-height: 1.3;
-    margin-top: -30px;
-    max-width: 500px;
-    width: 120%;
-    margin-top: -30px;
-    margin-left: -0.2px;
+    margin-top: -10px;
+    margin-right: -110px;
+    max-width: 400px;
+}
+
+.radar-chart .boxchart2{
+    font-size: 15px;
+    margin-top:10px;
+    margin-right: -110px;
+    max-width: 400px; 
+}
+
+
+.barometer-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.barometer-container2 h2 {
+    color: #A9D9D0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 100px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
+    padding-top: 40px;
+}
+
+.text {
+    text-align: center;
+}
+
+.text {
+    color: #858585;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+}
+.map-svg img {
+    margin-bottom: 60px;
+    padding-top: 30px;
+    width: 500px;
 }
 
 }
@@ -1271,7 +1350,7 @@ h4 {
 /*----------------------------------------------Startseite--------------------------------------*/
 
 .dropdown a{
-    font-size: 50px;
+    font-size: 55px;
 }
 
 .dropdown{
@@ -1298,14 +1377,11 @@ h4 {
 
 /*----------------------------------------------Startseite--------------------------------------*/
 .abgerundetes-rechteck {
-    width: 500px;
-    height: 1100px;
-    margin-right: 1px;
-
+    height: 900px;
 }
 .startseite-text {
     position: relative;
-    padding-left:60px;
+    padding-left: 80px;
     padding-top: 20px;
 }   
 .startseite-text::before {
@@ -1313,7 +1389,7 @@ h4 {
     height: 90%;
     position: absolute;
     margin-top: 140px;
-    left: 40px; /* Anpassen der Position des Strichs zur Seite */
+    left: 30px; /* Anpassen der Position des Strichs zur Seite */
     width: 5px; /* Breite des Strichs */
     background-color: #F2E7DC; /* Farbe des Strichs */
 }
@@ -1325,7 +1401,6 @@ h2 {
     font-style: normal;
     font-size: 70px;
     margin-top: 200px;
-    width: 90%;
 }
 
 h3 {
@@ -1334,30 +1409,28 @@ h3 {
     font-weight: 900;
     font-style: normal;
     font-size: 35px;
-    margin-top: -40px;
-    width: 90%;
+    margin-top: -50px;
 }
 
 h4 {
     color: #0D0D0D;
     font-family: "Roboto", sans-serif; 
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.3;
+    margin-top: -30px;
     margin-top: -20px;
-    max-width: 300px;
-    width: 110%;
-    margin-top: -10px;
     margin-left: -0.2px;
 }
 
 /*------------------Übersichtseite-------------------*/
 #uebersichtsseite {
-    padding-top: 480px;
+    padding-top: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
     margin-left: 70px;
+ 
 }
 
 .grid-container-uebersichtsseite {
@@ -1365,7 +1438,6 @@ h4 {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 30px;
-
 }
 
 .box1 {
@@ -1374,13 +1446,12 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 190px;
+    font-size: 170px;
     line-height: 1.3;
     text-align: center;
     margin: 0 auto;
-    margin-bottom: 120px;
-    margin-top: -50px;
-    
+    margin-bottom: 90px;
+    margin-top: -40px;
 }
 
 .box2 {
@@ -1389,20 +1460,21 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 190px;
+    font-size: 170px;
     line-height: 1.3;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 60px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .box3{
-    font-size: 20px;
-    max-width: 340px;
+    font-size: 18px;
+    max-width: 300px;
     width: 150%;
     margin-top: -70px;
-    margin-left: 10px;
+    margin-left: 18px;
+    
 }
 
 .box4{
@@ -1411,67 +1483,298 @@ h4 {
     margin-top: 230px;
     margin-bottom: 220px;
     width: 100%;
-    font-size: 20px;
-    max-width: 340px;
-    margin-left: 10px;
+    font-size: 18px;
+    max-width: 300px;
+
 }
 
-/*----------------------------------------Fakten------------------------------------------*/
-#fakten{
-    padding-top: 50px;
-    margin: 0 auto;
-    padding-bottom: 120px;
-}
+/*----------------------------------------Chart------------------------------------------*/
 
-.fakten-text h1{
-    font-size: 150px;
-    padding-right: 80px;
-}
-
-.fakten-text .overlay-text-fakten{
-    margin-right: -140px;
-    margin-top: -10px;
-    max-width: 400px;
-}
-
-
-.map-svg img {
-    margin-bottom: 60px;
-    align-items: center;
-    padding-right: 80px;
-    width: 300px;
-    max-width: 1000px;
-}
-
-/*----------------------------------------Footer------------------------------------------*/
-
-footer {
-    background-color: #A9D9D0;
-    color: white;
-    padding: 20px;
+.radar-chart h2{
+    font-size: 50px;
     text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
+    padding-bottom: 10px;
+}
+
+.boxchart{
+    font-size: 20px;
+    margin-top: -5px;
+    margin-right: -10px;
+    max-width: 250px;
+}
+
+.radar-chart .boxchart2{
+    font-size: 13px;
+    margin-top:10px;
+    margin-right: -160px;
+    max-width: 400px; 
+}
+
+
+.barometer-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+
+}
+
+.barometer-container2 h2 {
+    color: #A9D9D0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 100px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
+    padding-top: 40px;
+}
+
+.text {
+    text-align: center;
+}
+
+.text {
+    color: #858585;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    font-size: 17px;
-    margin-top: 50px;
-    width: 90%;
+    font-style: normal;
+    font-size: 15px;
 }
-/*----------------------------------------Chart------------------------------------------*/
-.radar-chart h2{
-    font-size: 70px;
-    margin-left: -25px;
+.map-svg img {
+    margin-bottom: 60px;
+    padding-top: 30px;
+    max-width: 400px;
 }
 
 #myChart {
     position: relative;
     margin: 0 auto;
     width: 100% !important;
-    max-width: 400px;
+    max-width: 300px;
     height: 500px;
     padding-top: 0px;
-    margin-left: 40px;
+    margin-left: 110px;
 }
 }  
+
+@media screen and (max-width: 450px) {
+
+    .dropdown a{
+        font-size: 55px;
+    }
+    
+    .dropdown{
+        display: none!important;
+        position: absolute;
+        left: 0;
+        top: -1px;
+        width:100%;
+        width: 390px;
+        padding: 90px 0 0 20px;
+        background-color: #F2E7DC;
+        height: 128vh;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        border-radius: 4px; 
+        cursor: pointer;   
+    }
+    
+    .dropdown.open {
+        display: block !important;
+        cursor: pointer;
+        width: 154%; 
+    }
+    
+    
+    /*----------------------------------------------Startseite--------------------------------------*/
+    .abgerundetes-rechteck {
+        height: 900px;
+    }
+    .startseite-text {
+        position: relative;
+        padding-left: 50px;
+        padding-top: 20px;
+    }   
+    .startseite-text::before {
+        content: '';
+        height: 90%;
+        position: absolute;
+        margin-top: 140px;
+        left: 30px; /* Anpassen der Position des Strichs zur Seite */
+        width: 5px; /* Breite des Strichs */
+        background-color: #F2E7DC; /* Farbe des Strichs */
+    }
+    
+    h2 {
+        color: #F2E7DC;
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 60px;
+        margin-top: 200px;
+    }
+    
+    h3 {
+        color: #0D0D0D;
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 35px;
+        margin-top: -50px;
+    }
+    
+    h4 {
+        color: #0D0D0D;
+        font-family: "Roboto", sans-serif; 
+        font-size: 18px;
+        line-height: 1.3;
+        margin-top: -30px;
+        max-width: 300px;
+    }
+    
+    /*------------------Übersichtseite-------------------*/
+    #uebersichtsseite {
+        padding-top: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 60px;
+        margin-left: 70px;
+     
+    }
+    
+    .grid-container-uebersichtsseite {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 30px;
+    }
+    
+    .box1 {
+        position: relative;
+        color: #F2E7DC;
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 170px;
+        line-height: 1.3;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 90px;
+        margin-top: -40px;
+    }
+    
+    .box2 {
+        position: relative;
+        color: #F2E7DC;
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 170px;
+        line-height: 1.3;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 60px;
+        margin-top: 10px;
+    }
+    
+    .box3{
+        font-size: 18px;
+        max-width: 300px;
+        width: 150%;
+        margin-top: -70px;
+        margin-left: 18px;
+        
+    }
+    
+    .box4{
+        margin: 0 auto;
+        position: absolute;
+        margin-top: 230px;
+        margin-bottom: 220px;
+        width: 100%;
+        font-size: 18px;
+        max-width: 300px;
+    
+    }
+    
+    /*----------------------------------------Chart------------------------------------------*/
+    
+    .radar-chart h2{
+        font-size: 50px;
+        text-align: center;
+        position: relative; /* Add position relative to h2 */
+        opacity: 0.7;
+        padding-bottom: 10px;
+    }
+    
+    .boxchart{
+        font-size: 20px;
+        margin-top: -5px;
+        margin-right: -10px;
+        max-width: 250px;
+    }
+    
+    .radar-chart .boxchart2{
+        font-size: 13px;
+        margin-top:10px;
+        margin-right: -160px;
+        max-width: 400px; 
+    }
+    
+    
+    .barometer-container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 10px;
+    
+    }
+    
+    .barometer-container2 h2 {
+        color: #A9D9D0;
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        font-size: 100px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative; /* Add position relative to h2 */
+        opacity: 0.7;
+        padding-top: 40px;
+    }
+    
+    .text {
+        text-align: center;
+    }
+    
+    .text {
+        color: #858585;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 15px;
+    }
+    .map-svg img {
+        margin-bottom: 60px;
+        padding-top: 30px;
+        max-width: 400px;
+    }
+    
+    #myChart {
+        position: relative;
+        margin: 0 auto;
+        width: 100% !important;
+        max-width: 300px;
+        height: 500px;
+        padding-top: 0px;
+        margin-left: 110px;
+    }
+
+
+}
 
 
 
@@ -1506,21 +1809,19 @@ footer {
 
 /*----------------------------------------------Startseite--------------------------------------*/
 .abgerundetes-rechteck {
-    width: 620px;
-    height: 1100px;
-    margin-right: -180px;
+    height: 800px;
 }
 .startseite-text {
     position: relative;
-    padding-left: 80px;
-    padding-top: 20px;
+    padding-left: 50px;
+    padding-top: 100px;
 }   
 .startseite-text::before {
     content: '';
     height: 90%;
     position: absolute;
-    margin-top: 140px;
-    left: 50px; /* Anpassen der Position des Strichs zur Seite */
+    margin-top:-10px;
+    left: 30px; /* Anpassen der Position des Strichs zur Seite */
     width: 5px; /* Breite des Strichs */
     background-color: #F2E7DC; /* Farbe des Strichs */
 }
@@ -1530,8 +1831,8 @@ h2 {
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     font-style: normal;
-    font-size: 80px;
-    margin-top: 200px;
+    font-size: 60px;
+    margin-top:10px;
 }
 
 h3 {
@@ -1539,31 +1840,28 @@ h3 {
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     font-style: normal;
-    font-size: 40px;
+    font-size: 35px;
     margin-top: -50px;
-    width: 130%;
 }
 
 h4 {
     color: #0D0D0D;
     font-family: "Roboto", sans-serif; 
-    font-size: 25px;
+    font-size: 20px;
     line-height: 1.3;
     margin-top: -30px;
-    max-width: 800px;
-    width: 120%;
     margin-top: -20px;
     margin-left: -0.2px;
 }
 
 /*------------------Übersichtseite-------------------*/
 #uebersichtsseite {
-    padding-top: 480px;
+    padding-top: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 60px;
-    margin-left: 140px;
+    margin-left: 70px;
  
 }
 
@@ -1581,7 +1879,7 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 190px;
+    font-size: 140px;
     line-height: 1.3;
     text-align: center;
     margin: 0 auto;
@@ -1595,92 +1893,108 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 190px;
+    font-size: 140px;
     line-height: 1.3;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 60px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .box3{
-    font-size: 25px;
-    max-width: 800px;
+    font-size: 18px;
+    max-width: 300px;
     width: 150%;
     margin-top: -70px;
-    margin-left: -60px;
+    margin-left: -20px;
+    
 }
 
 .box4{
     margin: 0 auto;
     position: absolute;
-    margin-top: 230px;
-    margin-bottom: 220px;
+    margin-top: 200px;
+    margin-bottom: 200px;
     width: 100%;
-    font-size: 25px;
-    max-width: 840px;
-    margin-left: -60px; 
+    font-size: 18px;
+    max-width: 300px;
+    margin-left: -20px;
 }
 
-/*----------------------------------------Fakten------------------------------------------*/
-#fakten{
-    padding-top: 50px;
-    margin: 0 auto;
-    padding-bottom: 120px;
-}
+/*----------------------------------------Chart------------------------------------------*/
 
-.fakten-text h1{
-    font-size: 150px;
-    padding-left: 120px;
-}
-
-.fakten-text .overlay-text-fakten{
-    margin-right: -420px;
-    margin-top: -30px;
-}
-
-.fakten-text .overlay-text-klein-fakten{
-    margin-top: 10px;
-    align-items: center;
-    margin-left: 300px;
-
-}
-
-.map-svg img {
-    margin-bottom: 60px;
-    align-items: center;
-    margin-right: -170px;
-    padding-left: 80px;
-    max-width: 800px;
-}
-
-/*----------------------------------------Footer------------------------------------------*/
-
-footer {
-    background-color: #A9D9D0;
-    color: white;
-    padding: 20px;
+.radar-chart h2{
+    font-size: 60px;
     text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.boxchart{
+    font-size: 20px;
+    margin-top: -5px;
+    margin-right: -60px;
+    max-width: 250px;
+}
+
+.radar-chart .boxchart2{
+    font-size: 13px;
+    margin-top:10px;
+    margin-right: -205px;
+    max-width: 400px; 
+}
+
+
+.barometer-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+
+}
+
+.barometer-container2 h2 {
+    color: #A9D9D0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 100px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
+    padding-top: 40px;
+}
+
+.text {
+    text-align: center;
+}
+
+.text {
+    color: #858585;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    font-size: 17px;
-    margin-top: 50px;
-    width: 150%;
+    font-style: normal;
+    font-size: 15px;
 }
-/*----------------------------------------Chart------------------------------------------*/
-.radar-chart h2{
-    font-size: 90px;
-    padding-left: 40px;
+.map-svg img {
+    margin-bottom: 60px;
+    padding-top: 30px;
+    max-width: 350px;
 }
 
 #myChart {
     position: relative;
     margin: 0 auto;
     width: 100% !important;
-    max-width: 600px;
+    max-width: 300px;
     height: 500px;
     padding-top: 0px;
-    margin-left: 110px;
+    margin-left: 40px;
 }
+
+
+
 }  
 
