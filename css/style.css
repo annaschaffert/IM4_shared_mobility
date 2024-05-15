@@ -29,12 +29,12 @@ body {
 }
 
 .hamburger:not(.inactive) .line {
-    background-color: #A9D9D0; 
+    background-color: #F2E7DC; 
     cursor: pointer;
 }
 
 .line{
-    background-color: #A9D9D0; 
+    background-color: #F2E7DC; 
     width: 95%;
     height: 3px;
     cursor: pointer;
@@ -47,7 +47,7 @@ body {
     top: -1px;
     width:100%;
     padding: 90px 0 0 20px;
-    background-color: #F2E7DC;
+    background-color: #A9D9D0;
     height: 100vh;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     border-radius: 4px; 
@@ -78,7 +78,7 @@ body {
 }
 
 .dropdown a:hover{
-    color: #A9D9D0;
+    color: #F2E7DC;
 }
 
 .dropdown li:nth-child(1){
