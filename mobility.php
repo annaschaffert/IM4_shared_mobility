@@ -2,6 +2,7 @@
 
 function randomTotalNumVehicles() {
     $total_num_vehicles = [];
+    // Alternative wegen instabiler API, genehmigt von Samuel Rhyner
     for ($i = 0; $i < 8; $i++) {
         $randomNumber;
         if ($i >= 0 && $i < 9) {
@@ -24,7 +25,7 @@ $data = [];
 $weekdays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
 foreach ($weekdays as $weekday) {
     // $totalNumVehicles = $row['total_num_vehicles'];
-    // Alternative wegen instabilder API, genehmigt von Samuel Rhyner
+    // Alternative wegen instabiler API, genehmigt von Samuel Rhyner
     $totalNumVehicles = randomTotalNumVehicles();
     $entry = [
         'weekday' => $weekday,
