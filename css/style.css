@@ -827,11 +827,21 @@ footer {
     padding-top:-190px;
 }
 
-
-
-.overlay-text {
+.box2 .overlay-text {
     position: absolute;
-    top: 60%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: #A9D9D0;
+    font-size: 50px;
+    text-align: center;
+}
+
+.box2.overlay-text {
+    position: absolute;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Roboto", sans-serif;
@@ -845,26 +855,65 @@ footer {
     display: none;
 }
 
-/*----------------------------------------Fakten------------------------------------------*/
-#fakten{
-    padding-top: 50px;
-    margin: 0 auto;
-    padding-bottom: 120px;
+/*----------------------------------------Chart------------------------------------------*/
+
+.radar-chart h2{
+    font-size: 130px;
+    text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
 }
 
-.fakten-text .overlay-text-fakten{
+.boxchart{
+    font-size: 35px;
+    margin-top: -20px;
     margin-right: 50px;
-    margin-top: -30px;
+    max-width: 500px;
 }
 
-.fakten-text .overlay-text-klein-fakten{
-    margin-top: 10px;
-    margin-right: -350px;
+.radar-chart .boxchart2{
+    font-size: 15px;
+    margin-top:-10px;
+    margin-right: 150px;
+    max-width: 400px; 
+}
+/*----------------------------------------einsparung co2 Barometer------------------------------------------*/
+
+.barometer-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
+.barometer-container2 h2 {
+    color: #A9D9D0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
+    padding-top: 40px;
+}
+
+.text {
+    text-align: center;
+}
+
+.text {
+    color: #858585;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+}
 .map-svg img {
     margin-bottom: 60px;
 }
+
+
 }
      
 
