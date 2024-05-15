@@ -480,7 +480,7 @@ footer {
     .hamburger:not(.inactive) .line {
         background-color:#ffffff;
     }
-
+}
   /*----------------------------------------------Startseite--------------------------------------*/  
     .abgerundetes-rechteck {
        border-radius: 0%;
