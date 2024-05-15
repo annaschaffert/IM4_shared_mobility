@@ -575,70 +575,59 @@ footer {
     padding-top: 50px;
 }
 
-/*----------------------------------------Fakten------------------------------------------*/
-#fakten{
-    padding-top: -150px;
-    margin: 0 auto;
-    padding-bottom: 100px;
-}
+/*----------------------------------------Chart------------------------------------------*/
 
-.map-svg img {
-    max-width: 50%; /* Maximale Bildbreite */
-    display: block; /* Blockelement */
-    margin: 0 auto;
-    margin-top: -120px;
-    position: relative;
-}
-
-.fakten-text h1{
+.radar-chart h2{
     color: #F2E7DC;
     font-family: "Roboto", sans-serif;
     font-weight: 800;
     font-style: normal;
-    font-size: 180px;
+    font-size: 200px;
     margin: 0 auto;
     text-align: center;
-    position: relative; /* Add position relative to h1 */
+    position: relative; /* Add position relative to h2 */
     opacity: 0.7;
 }
 
-.fakten-text .overlay-text-fakten{
+.boxchart{
     color: #0D0D0D;
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     font-style: normal;
-    font-size: 25px;
+    font-size: 35px;
     line-height: 1.3;
     text-align: center;
     margin: 0 auto;
     margin-top: -45px;
-    margin-right: 250px;
+    margin-right: 330px;
     max-width: 500px;
     transform: translate(-50%, -50%);
-    position: relative; /* Add position relative to h1 */
+    position: relative; /* Add position relative to h2 */
 }
 
-.fakten-text .overlay-text-klein-fakten{
+.radar-chart .boxchart2{
     color: #858585;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     font-size: 15px;
     line-height: 1.3;
     text-align: center;
     margin: 0 auto;
     margin-top:-10px;
-    margin-right: -150px;
+    margin-right: -40px;
     max-width: 900px;
     transform: translate(-50%, -50%);
     position: relative; /* Add position relative to h1 */
 }
 
-/*----------------------------------------Chart------------------------------------------*/
-
-.radar-chart h2{
-    font-size: 110px;
-}
+#myChart {
+    position: relative;
+    margin: 0 auto;
+    width: 100% !important;
+    max-width: 600px;
+    height: 500px;
+    padding-top: 0px;
 }
 
 
