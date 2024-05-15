@@ -2,7 +2,7 @@
 
 function randomTotalNumVehicles() {
     $total_num_vehicles = [];
-    for ($i = 0; $i < 24; $i++) {
+    for ($i = 0; $i < 8; $i++) {
         $randomNumber;
         if ($i >= 0 && $i < 9) {
             // Zufallszahlen zwischen 30 und 40 für die Stunden von 0 bis 9 Uhr
