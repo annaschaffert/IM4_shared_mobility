@@ -509,16 +509,17 @@ footer {
     gap: 5px;
 }
 
-.overlay-text {
-    position: absolute;
+.box2 .overlay-text {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    color: #A9D9D0;
     font-size: 50px;
-    text-align: center;
+
+}
+
+.box1 .overlay-text {
+    top: 55%;
+    left: 50%;
+    font-size: 50px;
 }
 
 .center-box img {
@@ -531,7 +532,35 @@ footer {
 /*----------------------------------------Chart------------------------------------------*/
 
 .radar-chart h2{
-    color: #F2E7DC;
+    font-size: 150px;
+    text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
+}
+
+.boxchart{
+    font-size: 35px;
+    margin-top: -30px;
+    margin-right: 250px;
+    max-width: 500px;
+}
+
+.radar-chart .boxchart2{
+    font-size: 15px;
+    margin-top:-10px;
+    margin-right: 350px;
+    max-width: 400px; 
+}
+/*----------------------------------------einsparung co2 Barometer------------------------------------------*/
+
+.barometer-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.barometer-container2 h2 {
+    color: #A9D9D0;
     font-family: "Roboto", sans-serif;
     font-weight: 800;
     font-style: normal;
@@ -540,47 +569,62 @@ footer {
     text-align: center;
     position: relative; /* Add position relative to h2 */
     opacity: 0.7;
+    padding-top: 40px;
+    
 }
 
-.boxchart{
-    color: #0D0D0D;
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 35px;
-    line-height: 1.3;
+.fill {
+    height: 100%;
+    background-color: #A9D9D0;
+    border-radius: 5px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #f0f0f0;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-top:-40px;
+
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #A9D9D0;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #A9D9D0;
+    cursor: pointer;
+}
+
+.text {
     text-align: center;
-    margin: 0 auto;
-    margin-top: -45px;
-    margin-right: 250px;
-    max-width: 500px;
-    transform: translate(-50%, -50%);
-    position: relative; /* Add position relative to h2 */
 }
 
-.radar-chart .boxchart2{
+.text {
     color: #858585;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 15px;
-    line-height: 1.3;
-    text-align: center;
-    margin: 0 auto;
-    margin-top:-10px;
-    margin-right: -40px;
-    max-width: 900px;
-    transform: translate(-50%, -50%);
-    position: relative; /* Add position relative to h1 */
-}
-
-#myChart {
-    position: relative;
-    margin: 0 auto;
-    width: 100% !important;
-    max-width: 600px;
-    height: 500px;
-    padding-top: 0px;
 }
 }
 
@@ -646,25 +690,64 @@ footer {
     padding-top: 50px;
 }
 
-/*----------------------------------------Fakten------------------------------------------*/
-#fakten{
-    padding-top: 50px;
-    margin: 0 auto;
-    padding-bottom: 120px;
+/*----------------------------------------Chart------------------------------------------*/
+
+.radar-chart h2{
+    font-size: 150px;
+    text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
 }
 
-.fakten-text .overlay-text-fakten{
-    margin-right: 145px;
+.boxchart{
+    font-size: 35px;
+    margin-top: -30px;
+    margin-right: 150px;
+    max-width: 500px;
 }
 
-.fakten-text .overlay-text-klein-fakten{
+.radar-chart .boxchart2{
+    font-size: 15px;
     margin-top:-10px;
-    margin-right: -260px;
+    margin-right: 250px;
+    max-width: 400px; 
+}
+/*----------------------------------------einsparung co2 Barometer------------------------------------------*/
+
+.barometer-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
+.barometer-container2 h2 {
+    color: #A9D9D0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative; /* Add position relative to h2 */
+    opacity: 0.7;
+    padding-top: 40px;
+}
+
+.text {
+    text-align: center;
+}
+
+.text {
+    color: #858585;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+}
 .map-svg img {
     margin-bottom: 60px;
 }
+
 }
 
 
