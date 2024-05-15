@@ -60,14 +60,15 @@ async function main() {
     };
 
     function getBackgroundColor(index) {
-        const colors = ["rgba(30, 144, 255, 0.2)", "rgba(176, 224, 230, 0.2)", "rgba(240, 230, 140, 0.2)", "rgba(255, 222, 173, 0.2)", "rgba(255, 192, 203, 0.2)", "rgba(255, 228, 181, 0.2)", "rgba(135, 206, 250, 0.2)"];
+        const colors = ["rgba(2, 115, 115, 0.2)", "rgba(3, 140, 127, 0.2)", "rgba(169, 217, 208, 0.2)", "rgba(242, 231, 220, 0.2)", "rgba(199, 255, 237, 0.2)", "rgba(216, 255, 219, 0.2)", "rgba(2, 53, 53, 0.2)"];
         return colors[index % colors.length];
     }
-
+    
     function getBorderColor(index) {
-        const colors = ["rgba(30, 144, 255, 1)", "rgba(176, 224, 230, 1)", "rgba(240, 230, 140, 1)", "rgba(255, 222, 173, 1)", "rgba(255, 192, 203, 1)", "rgba(255, 228, 181, 1)", "rgba(135, 206, 250, 1)"];
+        const colors = ["rgba(2, 115, 115, 1)", "rgba(3, 140, 127, 1)", "rgba(169, 217, 208, 1)", "rgba(242, 231, 220, 1)", "rgba(199, 255, 237, 1)", "rgba(216, 255, 219, 1)", "rgba(2, 53, 53, 1)"];
         return colors[index % colors.length];
     }
+    
 
     const options = {
         scales: {
