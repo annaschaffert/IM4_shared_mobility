@@ -48,7 +48,7 @@ async function main() {
     const ctx = document.getElementById("myChart").getContext("2d");
 
     const data = {
-        labels: ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"],
+        labels: ["0 Uhr", "3 Uhr", "6 Uhr", "9 Uhr", "12 Uhr", "15 Uhr", "18 Uhr", "21 Uhr"],
         datasets: total_num_vehicles.map((entry, index) => ({
             label: entry.weekday,
             data: entry.total_num_vehicles,
