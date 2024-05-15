@@ -52,12 +52,23 @@ async function main() {
         datasets: total_num_vehicles.map((entry, index) => ({
             label: entry.weekday,
             data: entry.total_num_vehicles,
-            backgroundColor: "rgba(30, 144, 255, 0.2)", // Blau
-            borderColor: "rgba(30, 144, 255, 1)", // Blau
+            backgroundColor: getBackgroundColor(index),
+            borderColor: getBorderColor(index),
             borderWidth: 1,
             hidden: ![0, 1, 2].includes(index), // Verstecke Montag, Dienstag, Mittwoch standardmäßig
         })),
     };
+
+    function getBackgroundColor(index) {
+        const colors = ["rgba(2, 115, 115, 0.2)", "rgba(3, 140, 127, 0.2)", "rgba(169, 217, 208, 0.2)", "rgba(242, 231, 220, 0.2)", "rgba(199, 255, 237, 0.2)", "rgba(216, 255, 219, 0.2)", "rgba(2, 53, 53, 0.2)"];
+        return colors[index % colors.length];
+    }
+    
+    function getBorderColor(index) {
+        const colors = ["rgba(2, 115, 115, 1)", "rgba(3, 140, 127, 1)", "rgba(169, 217, 208, 1)", "rgba(242, 231, 220, 1)", "rgba(199, 255, 237, 1)", "rgba(216, 255, 219, 1)", "rgba(2, 53, 53, 1)"];
+        return colors[index % colors.length];
+    }
+    
 
     const options = {
         scales: {
