@@ -226,7 +226,7 @@ h4 {
 
 .box1 .overlay-text {
     position: absolute;
-    top: 55%;
+    top: 36%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Roboto", sans-serif;
@@ -238,7 +238,7 @@ h4 {
 
 .box2 .overlay-text {
     position: absolute;
-    top: 70%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Roboto", sans-serif;
