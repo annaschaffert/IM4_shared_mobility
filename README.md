@@ -23,5 +23,5 @@ Benutzte Ressourcen:
 
 - Chat GPT
 - Co-Pilot
-- Coachings bei Samuel Rhyner und Anja 
+- Coachings bei Samuel Rhyner und Anja Leu
 
