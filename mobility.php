@@ -1,5 +1,7 @@
 <?php
 
+// Leider ist die API kaputt, was auch von dem Provider bestätigt wurde (seit 29.April). Sie sind dran, das Problem zu beheben. Bis dahin haben wir eine randomisierte Zahl anstelle eingefügt, um eine spannendere Chart zu erhalten - genehmigt von Samuel Rhyner
+
 function randomTotalNumVehicles() {
     $total_num_vehicles = [];
     // Alternative wegen instabiler API, genehmigt von Samuel Rhyner
