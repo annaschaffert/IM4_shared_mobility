@@ -1525,7 +1525,7 @@ h4 {
     margin-top:35px;
     left: 26px; /* Anpassen der Position des Strichs zur Seite */
     width: 5px; /* Breite des Strichs */
-    background-color: #F2E7DC;
+      background-color: #F2E7DC;
 }
 
 h2 {
@@ -1722,7 +1722,7 @@ h4 {
     margin-bottom: 200px;
     font-size: 17px;
     max-width: 300px;
-    margin-left: -25px;
+    margin-left: -15px;
 }
 /*----------------------------------------Chart------------------------------------------*/
 .radar-chart h2{
