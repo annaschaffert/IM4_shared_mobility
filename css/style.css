@@ -9,9 +9,7 @@ body {
     margin: 0;
     padding: 0;
 }
-
 /*----------------------------------------------Header--------------------------------------*/
-
 .menu {
     position: fixed;
     top: 0;
@@ -366,7 +364,6 @@ h4 {
     -webkit-transition: .2s;
     transition: opacity .2s;
     margin-top:-40px;
-
 }
 
 .slider:hover {
@@ -402,12 +399,7 @@ h4 {
     font-style: normal;
     font-size: 15px;
 }
-
-
-
-
 /*----------------------------------------Footer------------------------------------------*/
-
 footer {
     background-color: #A9D9D0;
     color: white;
@@ -419,10 +411,7 @@ footer {
     margin-top: 50px;
    
 }
-
-
 /*----------------------------------------RESPONSIVE-------------------------------------*/
-
 @media screen and (max-width: 1500px) {
 
   /*----------------------------------------------Header--------------------------------------*/  
