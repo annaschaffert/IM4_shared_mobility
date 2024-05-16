@@ -462,6 +462,7 @@ footer {
         margin-top: 90px;
         left: 370px; /* Anpassen der Position des Strichs zur Seite */
         width: 6px; /* Breite des Strichs */
+        background-color: #F2E7DC;
     }
 
     .blaue_fleache img {
@@ -614,6 +615,7 @@ footer {
     margin-top: 90px;
     left: 340px; /* Anpassen der Position des Strichs zur Seite */
     width: 4px; /* Breite des Strichs */
+    background-color: #F2E7DC;
 }
 /*------------------Übersichtseite-------------------*/
 #uebersichtsseite {
@@ -696,6 +698,7 @@ footer {
     margin-top: 90px;
     left: 290px; /* Anpassen der Position des Strichs zur Seite */
     width: 4px; /* Breite des Strichs */
+    background-color: #F2E7DC;
 }
 /*------------------Übersichtseite-------------------*/
 #uebersichtsseite {
@@ -817,6 +820,7 @@ footer {
         margin-top: 90px;
         left: 180px; /* Anpassen der Position des Strichs zur Seite */
         width: 4px; /* Breite des Strichs */
+        background-color: #F2E7DC;
     }
 /*----------------------------------------------Übersichtseite------------------------------------*/
 #uebersichtsseite {
@@ -918,6 +922,7 @@ footer {
         margin-top: 90px;
         left: 110px; /* Anpassen der Position des Strichs zur Seite */
         width: 4px; /* Breite des Strichs */
+        background-color: #F2E7DC;
 }
 
 /*---------------------------------------------Übersichtseite---------------------------------------*/
@@ -1011,6 +1016,7 @@ footer {
         margin-top: 90px;
         left: 110px; /* Anpassen der Position des Strichs zur Seite */
         width: 4px; /* Breite des Strichs */
+        background-color: #F2E7DC;
 }
 
 /*------------------Übersichtseite-------------------*/
@@ -1187,6 +1193,7 @@ h4 {
     top: 20%;
     left: 50px;
     height: 70%;
+    background-color: #F2E7DC;
 }
 /*--------------------------------------------Übersichtseite--------------------------------------*/
 #uebersichtsseite {
