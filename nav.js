@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     main(); // Hier einmal main() aufrufen, um sicherzustellen, dass es nur einmal ausgeführt wird
 });
-
+// Path: chart.js
 
 async function fetchDataFromPHP() {
     try {
@@ -42,6 +42,8 @@ async function fetchDataFromPHP() {
     }
 }
 
+// Main function of the script, radar chart is created here
+
 async function main() {
     const total_num_vehicles = await fetchDataFromPHP();
 
@@ -55,9 +57,11 @@ async function main() {
             backgroundColor: getBackgroundColor(index),
             borderColor: getBorderColor(index),
             borderWidth: 1,
-            hidden: ![0, 1, 2].includes(index), // Verstecke Montag, Dienstag, Mittwoch standardmäßig
+            hidden: ![0, 1, 2].includes(index), //  Montag, Dienstag, Mittwoch standardmässig erscheinen lassen, den rest nicht
         })),
     };
+
+    // Funktionen zum Festlegen der Hintergrund- und Rahmenfarben
 
     function getBackgroundColor(index) {
         const colors = ["rgba(2, 115, 115, 0.2)", "rgba(3, 140, 127, 0.2)", "rgba(169, 217, 208, 0.2)", "rgba(242, 231, 220, 0.2)", "rgba(199, 255, 237, 0.2)", "rgba(216, 255, 219, 0.2)", "rgba(2, 53, 53, 0.2)"];
@@ -69,6 +73,7 @@ async function main() {
         return colors[index % colors.length];
     }
     
+    // Konfigurationsoptionen für das Radar-Diagramm
 
     const options = {
         scales: {
@@ -82,6 +87,8 @@ async function main() {
         }
     };
 
+    // Erstellen des Radar-Diagramm
+
     const radarChart = new Chart(ctx, {
         type: "radar",
         data: data,
@@ -89,6 +96,7 @@ async function main() {
     });
 
     // Eventlistener zum Ein- und Ausblenden von Datasets hinzufügen
+    
     const legend = radarChart.legend;
     legend.legendItems.forEach(item => {
         item.textEl.addEventListener("click", function () {
