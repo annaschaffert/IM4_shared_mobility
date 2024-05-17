@@ -1316,14 +1316,14 @@ h4 {
 .boxchart{
     font-size: 20px;
     margin-top: -5px;
-    margin-right: -10px;
+    margin-right: 4px;
     max-width: 250px;
 }
 
 .radar-chart .boxchart2{
     font-size: 13px;
     margin-top:10px;
-    margin-right: -160px;
+    margin-right: -140px;
     max-width: 400px; 
 }
 .barometer-container {
@@ -1353,7 +1353,7 @@ h4 {
     max-width: 300px;
     height: 500px;
     padding-top: 0px;
-    margin-left:110px;
+    margin-left:90px;
 }
 }  
 
