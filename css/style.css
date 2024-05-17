@@ -269,7 +269,7 @@ h4 {
     font-family: "Roboto", sans-serif;
     font-weight: 800;
     font-style: normal;
-    font-size: 160px;
+    font-size: 180px;
     margin: 0 auto;
     text-align: center;
     position: relative; /* Add position relative to h2 */
@@ -509,7 +509,7 @@ footer {
 }
 /*----------------------------------------Chart------------------------------------------*/
 .radar-chart h2{
-    font-size: 150px;
+    font-size: 180px;
 }
 
 .boxchart{
@@ -634,7 +634,7 @@ footer {
 }
 /*----------------------------------------Chart------------------------------------------*/
 .radar-chart h2{
-    font-size: 150px;
+    font-size: 180px;
 }
 
 .boxchart{
@@ -753,7 +753,7 @@ footer {
 }
 /*----------------------------------------Chart------------------------------------------*/
 .radar-chart h2{
-    font-size: 130px;
+    font-size: 180px;
     opacity: 0.7;
 }
 
@@ -859,7 +859,7 @@ footer {
 /*----------------------------------------Chart------------------------------------------*/
 
 .radar-chart h2{
-    font-size: 120px;
+    font-size: 140px;
 }
 
 .boxchart{
@@ -952,7 +952,7 @@ footer {
 
 /*----------------------------------------Chart------------------------------------------*/
 .radar-chart h2{
-    font-size: 90px;
+    font-size: 105px;
 }
 
 .boxchart{
@@ -1044,7 +1044,7 @@ footer {
 }
 /*----------------------------------------Chart------------------------------------------*/
 .radar-chart h2{
-    font-size: 90px;
+    font-size: 105px;
 }
 
 .boxchart{
@@ -1125,7 +1125,7 @@ h4 {
 
 /*----------------------------------------Chart------------------------------------------*/
 .radar-chart h2{
-    font-size: 80px;
+    font-size: 90px;
 }
 
 .boxchart{
@@ -1309,21 +1309,21 @@ h4 {
 }
 /*----------------------------------------Chart------------------------------------------*/
 .radar-chart h2{
-    font-size: 50px;
+    font-size: 90px;
     padding-bottom: 10px;
 }
 
 .boxchart{
     font-size: 20px;
     margin-top: -5px;
-    margin-right: -10px;
+    margin-right: 4px;
     max-width: 250px;
 }
 
 .radar-chart .boxchart2{
     font-size: 13px;
     margin-top:10px;
-    margin-right: -160px;
+    margin-right: -140px;
     max-width: 400px; 
 }
 .barometer-container {
@@ -1353,7 +1353,7 @@ h4 {
     max-width: 300px;
     height: 500px;
     padding-top: 0px;
-    margin-left:110px;
+    margin-left:90px;
 }
 }  
 
@@ -1443,7 +1443,7 @@ h4 {
     }
     /*----------------------------------------Chart------------------------------------------*/
     .radar-chart h2{
-        font-size: 50px;
+        font-size: 90px;
         padding-bottom: 10px;
     }
     
@@ -1587,7 +1587,7 @@ h4 {
 /*----------------------------------------Chart------------------------------------------*/
 
 .radar-chart h2{
-    font-size: 55px;
+    font-size: 90px;
     opacity: 0.7;
     padding-left: 3px;
     padding-bottom: 10px;
@@ -1722,14 +1722,14 @@ h4 {
 }
 /*----------------------------------------Chart------------------------------------------*/
 .radar-chart h2{
-    font-size: 55px;
+    font-size: 90px;
     padding-left: 3px;
     padding-bottom: 10px;
 }
 
 .boxchart{
     font-size: 20px;
-    margin-top: 1px;
+    margin-top: -2.5px;
     margin-right: -60px;
     max-width: 250px;
 }
