@@ -17,7 +17,11 @@ Responsive Design: Wir haben uns sehr lange mit Responsive Design beschäftigt. 
 
 Fazit:
 
-Zusammenfassend sind wir stolz auf das Ergebnis, das wir erreicht haben. Wir haben viele Hürden bezwungen und viel Zeit sowie sehr viele Nerven in das Projekt gesteckt. 
+Zusammenfassend sind wir stolz auf das Ergebnis, das wir erreicht haben. Wir haben viele Hürden bezwungen und viel Zeit sowie sehr viele Nerven in das Projekt gesteckt.
+
+Kommentar zur Präsentation vom 17.Mai:
+
+Bei einem Coaching ganz am Beginn des IM-Unterrichts dieses Semesters, das beim Dozenten Nils Solanski statt fand, wurde uns gesagt, dass eine normale line Chart zu langweilig sei. Deswegen haben wir uns, nach Absprache mit Nils, uns für eine schwierigere und aufwändigere Radar Chart entschieden, welche visuell interessanter aussieht. Leider wurde uns dies nun bei der Präsentation als negativer Punkt angelastet, weswegen wir nun hoffen, keinen Abzug hier zu erhalten, da dieser Vorschlag von einem Dozenten kam.
 
 Benutzte Ressourcen:
 
